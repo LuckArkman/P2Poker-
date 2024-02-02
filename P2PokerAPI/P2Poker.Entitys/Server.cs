@@ -8,7 +8,7 @@ using P2Poker.Singletons;
 
 namespace P2Poker.Entitys;
 
-public class Server : ServerDAO
+public class Server : ServerDAO, IServer
 {
     public Server(){}
 
@@ -59,5 +59,23 @@ public class Server : ServerDAO
         var reposit = Singleton._singleton().CreateRoomRepository(db);
         var rom = reposit.Get(RoomId);
         var cl = rom.clientList.Find(c => c.UserID == client.UserID);
+    }
+
+    public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, IPlayer client)
+    => controllerManager.HandleRequest(requestCode, actionCode, data, client);
+
+    public void RemoveClient(IPlayer player, Socket socket)
+    {
+        var db = Singleton._singleton().CreateDBContext();
+        var reposit = Singleton._singleton().CreateRoomRepository(db);
+        player.socket.Shutdown(SocketShutdown.Both);
+        if (reposit.Get(player.roomController.UUID).clientList.Find(c => c.UserID == player.UserID) is not null)
+        {
+            lock (reposit.Get(player.roomController.UUID).clientList)
+            {
+                reposit.Get(player.roomController.UUID).clientList.Remove(player);
+                Console.WriteLine($"{nameof(RemoveClient)} In Server Cliente Id {player.UserID} has be desconnected");
+            }
+        }
     }
 }
