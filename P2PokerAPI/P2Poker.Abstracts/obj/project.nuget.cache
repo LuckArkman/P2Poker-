@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3bSq2HDv2x/SB29hDWZLS8F5Bn5ZHbFMslkv4KU+IeAn5+Dz3QReqjYMfhzFBte8UwrNhEHfX5hso8lzilTIrg==",
+  "success": true,
+  "projectFilePath": "/home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/P2Poker.Abstracts/P2Poker.Abstracts.csproj",
+  "expectedPackageFiles": [
+    "/home/mauricio/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.0/microsoft.aspnetcore.app.ref.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
