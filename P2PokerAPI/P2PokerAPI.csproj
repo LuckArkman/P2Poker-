@@ -13,4 +13,31 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="P2Poker.Strucs\obj\P2Poker.Strucs.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Strucs\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Strucs\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Bean\obj\P2Poker.Bean.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Bean\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Bean\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Dao\obj\P2Poker.Dao.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Dao\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Dao\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Interfaces\obj\P2Poker.Interfaces.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Interfaces\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="P2Poker.Interfaces\obj\project.packagespec.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="P2Poker.Bean\" />
+      <Folder Include="P2Poker.Configuration\" />
+      <Folder Include="P2Poker.Context\" />
+      <Folder Include="P2Poker.Controller\" />
+      <Folder Include="P2Poker.Core\" />
+      <Folder Include="P2Poker.Dao\" />
+      <Folder Include="P2Poker.Interfaces\" />
+      <Folder Include="P2Poker.Repository\" />
+      <Folder Include="P2Poker.Strucs\" />
+    </ItemGroup>
+
 </Project>
