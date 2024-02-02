@@ -1,12 +1,11 @@
 using System.Net.Sockets;
 using P2Poker.Interfaces;
-using IServer = Microsoft.AspNetCore.Hosting.Server.IServer;
 
 namespace P2Poker.Dao;
 
 public class ClientDAO
 {
-    public ServerDAO server { get; set; }
+    public IServer server { get; set; }
     public int coins = 0;
     public Guid UUID { get; set; }
     public Socket client { get; set; }
@@ -23,6 +22,4 @@ public class ClientDAO
     public void SendMessage(byte[] bytes)
     {
     }
-
-    //public void OnBetRoom(string[] info) => roomController.OnPot(UUID, info);
 }

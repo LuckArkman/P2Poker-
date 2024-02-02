@@ -48,14 +48,14 @@ public class Client : ClientDAO, IPlayer
     public IStartGameContext startGameContext { get; set; }
     public int PlayerNumber { get; set; }
 
-    public Client(Socket clientSocket, ServerDAO sv)
+    public Client(Socket clientSocket, Server sv)
     {
         this.client = clientSocket;
         this.server = sv;
         this.UUID = Guid.NewGuid();
     }
 
-    public void SetServer(ServerDAO sv) => this.server = sv;
+    public void SetServer(Server sv) => this.server = sv;
 
     public void OnStart()
     {
