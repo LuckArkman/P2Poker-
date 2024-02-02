@@ -10,6 +10,9 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
@@ -29,15 +32,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="P2Poker.Bean\" />
       <Folder Include="P2Poker.Configuration\" />
-      <Folder Include="P2Poker.Context\" />
-      <Folder Include="P2Poker.Controller\" />
-      <Folder Include="P2Poker.Core\" />
-      <Folder Include="P2Poker.Dao\" />
-      <Folder Include="P2Poker.Interfaces\" />
-      <Folder Include="P2Poker.Repository\" />
-      <Folder Include="P2Poker.Strucs\" />
     </ItemGroup>
 
 </Project>

@@ -32,3 +32,7 @@
 /home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/obj/Debug/net8.0/P2PokerAPI.pdb
 /home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/obj/Debug/net8.0/P2PokerAPI.genruntimeconfig.cache
 /home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/obj/Debug/net8.0/ref/P2PokerAPI.dll
+/home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/bin/Debug/net8.0/Newtonsoft.Json.dll
