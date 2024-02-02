@@ -1,3 +1,4 @@
+using P2Poker.Bean;
 using P2Poker.Context;
 using P2Poker.Repository;
 
@@ -37,5 +38,25 @@ public class Singleton
         }
 
         return _RoomRepository;
+    }
+
+    public Room? RegisterRoom(Room output)
+    {
+        var db = _singleton().CreateDBContext();
+        var repository = _singleton().CreateRoomRepository(db);
+        repository.Insert(output);
+        Room room = repository.Get(output.UUID);
+        return room;
+    }
+
+    public Room? GetRoom(Guid id)
+    => _singleton().CreateRoomRepository(_singleton().CreateDBContext()).Get(id);
+
+    public List<Room> GetAllRoom()
+    {
+        var db = _singleton().CreateDBContext();
+        var repository = _singleton().CreateRoomRepository(db);
+        var room = repository.GetRooms();
+        return room;
     }
 }

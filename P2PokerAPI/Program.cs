@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Mvc;
+using P2Poker.Bean;
 using P2Poker.Controller;
+using P2Poker.Singletons;
 using P2PokerAPI;
 using u = System;
 var builder = WebApplication.CreateBuilder(args);
@@ -19,14 +22,36 @@ if (app.Environment.IsDevelopment()) {
 app.UseHttpsRedirection();
 app.MapGet("/getroom", (u.Guid Id) =>
     {
-        return Id;
+        Room r = Singleton._singleton().GetRoom(Id);
+        if (r is not null)
+        {
+            return r;
+        }
+        return null;
     })
     .WithName("getroom")
     .WithOpenApi();
-
+app.MapGet("/getallrooms", () =>
+    {
+        var r = Singleton._singleton().GetAllRoom();
+        if (r is not null)
+        {
+            return r;
+        }
+        return null;
+    })
+    .WithName("getallroom")
+    .WithOpenApi();
 app.MapPost("/createroom", (u.Guid Id) =>
     {
-        return u.Guid.NewGuid();
+        var output = new Room();
+        output.OnStart();
+        Room r = Singleton._singleton().RegisterRoom(output);
+        if (r is not null)
+        {
+            return r.UUID.ToString();
+        }
+        return null;
     })
     .WithName("createroom")
     .WithOpenApi();
