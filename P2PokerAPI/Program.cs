@@ -3,10 +3,8 @@ using P2Poker.Controller;
 using P2Poker.Singletons;
 using P2PokerAPI;
 using u = System;
-var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+var builder = WebApplication.CreateBuilder(args);
 new Startup().StartHost();
 builder.Services.AddAndConfigureControllers();
 builder.Services.DBConfiguration();

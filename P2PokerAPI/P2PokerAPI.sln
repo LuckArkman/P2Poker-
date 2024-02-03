@@ -1,20 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2PokerAPI", "P2PokerAPI.csproj", "{F235140C-6246-4808-9438-18CFEDD47AEB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2Poker.Bean", "P2Poker.Bean\P2Poker.Bean.csproj", "{F22AF940-22FA-49AF-B19F-60C68F204FC7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2Poker.Dao", "P2Poker.Dao\P2Poker.Dao.csproj", "{CA467AAE-265A-4384-BA14-F079FE528602}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2Poker.Core", "P2Poker.Core\P2Poker.Core.csproj", "{61EE942F-5101-479E-8C2A-7C6226142B4F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2Poker.Interfaces", "P2Poker.Interfaces\P2Poker.Interfaces.csproj", "{0D107E8A-5A54-4450-8F49-1CD9F5783964}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2Poker.Strucs", "P2Poker.Strucs\P2Poker.Strucs.csproj", "{97108246-C940-4F30-8CCC-7F6E0B1B9609}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2Poker.Abstracts", "P2Poker.Abstracts\P2Poker.Abstracts.csproj", "{D284B690-8D59-4F06-8F12-922B2EBF9A1C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2Poker.Entitys", "P2Poker.Entitys\P2Poker.Entitys.csproj", "{A73B1669-4890-4FFA-9462-BE1EFB9BB1C8}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P2PokerAPI", "P2PokerAPI.csproj", "{F235140C-6246-4808-9438-18CFEDD47AEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,33 +15,8 @@ Global
 		{F235140C-6246-4808-9438-18CFEDD47AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F235140C-6246-4808-9438-18CFEDD47AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F235140C-6246-4808-9438-18CFEDD47AEB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F22AF940-22FA-49AF-B19F-60C68F204FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F22AF940-22FA-49AF-B19F-60C68F204FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F22AF940-22FA-49AF-B19F-60C68F204FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F22AF940-22FA-49AF-B19F-60C68F204FC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA467AAE-265A-4384-BA14-F079FE528602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA467AAE-265A-4384-BA14-F079FE528602}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA467AAE-265A-4384-BA14-F079FE528602}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA467AAE-265A-4384-BA14-F079FE528602}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61EE942F-5101-479E-8C2A-7C6226142B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61EE942F-5101-479E-8C2A-7C6226142B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61EE942F-5101-479E-8C2A-7C6226142B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61EE942F-5101-479E-8C2A-7C6226142B4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D107E8A-5A54-4450-8F49-1CD9F5783964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D107E8A-5A54-4450-8F49-1CD9F5783964}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D107E8A-5A54-4450-8F49-1CD9F5783964}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D107E8A-5A54-4450-8F49-1CD9F5783964}.Release|Any CPU.Build.0 = Release|Any CPU
-		{97108246-C940-4F30-8CCC-7F6E0B1B9609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97108246-C940-4F30-8CCC-7F6E0B1B9609}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97108246-C940-4F30-8CCC-7F6E0B1B9609}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97108246-C940-4F30-8CCC-7F6E0B1B9609}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D284B690-8D59-4F06-8F12-922B2EBF9A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D284B690-8D59-4F06-8F12-922B2EBF9A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D284B690-8D59-4F06-8F12-922B2EBF9A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D284B690-8D59-4F06-8F12-922B2EBF9A1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A73B1669-4890-4FFA-9462-BE1EFB9BB1C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A73B1669-4890-4FFA-9462-BE1EFB9BB1C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A73B1669-4890-4FFA-9462-BE1EFB9BB1C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A73B1669-4890-4FFA-9462-BE1EFB9BB1C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
