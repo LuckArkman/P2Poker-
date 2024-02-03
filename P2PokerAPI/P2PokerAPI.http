@@ -1,6 +1,6 @@
-@P2PokerAPI_HostAddress = http://localhost:5204
+@P2PokerAPI_HostAddress = http://localhost:8080
 
-GET {{P2PokerAPI_HostAddress}}/weatherforecast/
+GET {{P2PokerAPI_HostAddress}}/getallrooms/
 Accept: application/json
 
 ###
