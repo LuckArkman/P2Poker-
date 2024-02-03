@@ -1082,24 +1082,35 @@
     ]
   },
   "packageFolders": {
-    "/home/mauricio/.nuget/packages/": {}
+    "C:\\Users\\mauri\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/P2PokerAPI.csproj",
+      "projectUniqueName": "E:\\Azure Projects\\P2Poker\\P2PokerAPI\\P2PokerAPI.csproj",
       "projectName": "P2PokerAPI",
-      "projectPath": "/home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/P2PokerAPI.csproj",
-      "packagesPath": "/home/mauricio/.nuget/packages/",
-      "outputPath": "/home/mauricio/Documents/GitHub/P2Poker/P2PokerAPI/obj/",
+      "projectPath": "E:\\Azure Projects\\P2Poker\\P2PokerAPI\\P2PokerAPI.csproj",
+      "packagesPath": "C:\\Users\\mauri\\.nuget\\packages\\",
+      "outputPath": "E:\\Azure Projects\\P2Poker\\P2PokerAPI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+      ],
       "configFilePaths": [
-        "/home/mauricio/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1150,12 +1161,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.0, 8.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1164,7 +1169,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
