@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VYZeXezLaFbJ7n9QFYI2JVg2J2/Uc6tB4MBIIjkduU91Y90cp0/dy0+G/CbajkLlvq0NTbJKYmFaGzxY6a6Kiw==",
+  "dgSpecHash": "Oy6z4xSmrWpq6+gCFzmHClqQdBipNmyFj/h4UqqdG9FP64Knk8GMDgokUDQb48dpVzmfrzVaEa5Cf12JJAgpPg==",
   "success": true,
   "projectFilePath": "E:\\Azure Projects\\P2Poker\\P2PokerAPI\\P2PokerAPI.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\mauri\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\mauri\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
