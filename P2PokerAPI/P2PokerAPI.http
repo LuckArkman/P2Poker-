@@ -1,6 +1,0 @@
-@P2PokerAPI_HostAddress = http://localhost:8080
-
-GET {{P2PokerAPI_HostAddress}}/getallrooms/
-Accept: application/json
-
-###
