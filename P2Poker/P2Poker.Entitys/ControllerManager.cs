@@ -37,7 +37,7 @@ public class ControllerManager : IControllerManager
         if (actionCode is ActionCode.ListRoom) new RoomController().ListRooms(client);
         Room? room = null;
         if(actionCode is ActionCode.JoinRoom)room = client.OnJoinRoom(client, new Guid(data));
-        if (room is not null && room.clientList.Count >= 1)
+        if (room is not null && room.clientList.Count > 1)
         {
             room.BroadCastMessage(client, requestCode, actionCode, client.UserID.ToString());
             var ls = from cl in room.clientList where cl.UserID != client.UserID && cl.socket.Connected select cl;
@@ -72,7 +72,6 @@ public class ControllerManager : IControllerManager
                 c++;
             }
         }
-        if (room is not null && room.clientList.Count < 1) room.SendMessage(client, requestCode, actionCode, client.UserID.ToString());
 
         await Task.CompletedTask;
     }
