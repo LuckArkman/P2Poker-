@@ -40,7 +40,6 @@ public class Server : ServerDAO, IServer
             Socket client = socket.EndAccept(ar);
             Client cl = new Client(client, this);
             cl.OnStart();
-            cl.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.UserId, cl.UserID.ToString())));
             clientList.Add(cl.UserID, cl);
             socket.BeginAccept(ConnectCallback, null);
         }

@@ -44,12 +44,12 @@ public class RoomRepository : IP2PokerRepository
     public async Task<Room> Search(Guid input)
         => await Task.FromResult(new Room());
 
-    public List<Room> GetRooms()
+    public List<RoomManager> GetRooms()
     {
-        List<Room> r = new List<Room>();
+        List<RoomManager> r = new List<RoomManager>();
         foreach (var _room in _catalogDb._rooms)
         {
-            r.Add(_room.Value);
+            r.Add(new RoomManager(_room.Value.tableContext, _room.Value.UUID, _room.Value.PlayerButton, _room.Value.turn));
         }
 
         return r;

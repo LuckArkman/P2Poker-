@@ -8,7 +8,7 @@ namespace P2Poker.Dao;
     public class RoomControllerDAO : IBaseController, IRoomController
     {
         
-        public TableContext tableContext { get; set; }
+        public IStartTableContext tableContext { get; set; }
         public List<Guid> Tablecards = new List<Guid>();
         public Dictionary<string, Pot> _pot = new Dictionary<string, Pot>();
         public GameRoundType roundType;

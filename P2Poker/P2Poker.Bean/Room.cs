@@ -49,10 +49,11 @@ public class Room : RoomControllerDAO
     }
 
     public void BroadCastMessage(IPlayer player, RequestCode requestCode, ActionCode actionCode, string message)
-        => clientList.ToList().ForEach(x=>{
+        => clientList.ToList().ForEach(x=>
+        {
             if (x.UserID != player.UserID) clientList.Find(u => u.UserID == x.UserID)!.SendData(Message.PackData(new Msg(requestCode, actionCode, message)));
         });
 
     public void SendMessage(IPlayer player, RequestCode requestCode, ActionCode actionCode, string message)
-        => player.SendData(Message.PackData(new Msg(requestCode, actionCode, message)));
+    => player.SendData(Message.PackData(new Msg(requestCode, actionCode, message)));
 }

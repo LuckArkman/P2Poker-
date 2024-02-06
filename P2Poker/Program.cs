@@ -7,7 +7,8 @@ using P2Poker.Singletons;
 
 Host.CreateDefaultBuilder().ConfigureServices((context, services) =>
 {
-    Server server = new Server(IPAddress.Any.ToString(), 7777);    
-    services.AddHostedService<ConsoleWriter>();
+    Server server = new Server(IPAddress.Any.ToString(), 7777);
     services.AddDbContext<P2pokerDbContext>();
+    services.AddHostedService<ConsoleWriter>();
+    
 }).Build().Run();

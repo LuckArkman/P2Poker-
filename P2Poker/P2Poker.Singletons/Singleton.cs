@@ -52,7 +52,7 @@ public class Singleton
     public Room? GetRoom(Guid id)
     => _singleton().CreateRoomRepository(_singleton().CreateDBContext()).Get(id);
 
-    public List<Room> GetAllRoom()
+    public List<RoomManager> GetAllRoom()
     {
         var db = _singleton().CreateDBContext();
         var repository = _singleton().CreateRoomRepository(db);

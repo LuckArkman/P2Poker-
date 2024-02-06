@@ -9,14 +9,10 @@ namespace P2Poker.Entitys;
 public class ControllerManager : IControllerManager
 {
     private Dictionary<RequestCode, BaseController> controllerDict = new Dictionary<RequestCode, BaseController>();
-    private Server server;
+    private Server server { get; set; }
 
-    public ControllerManager()
-    {
-    }
-
-    public ControllerManager(Server server)
-    {
+    public ControllerManager(){}
+    public ControllerManager(Server server) {
         this.server = server;
         Init();
     }
@@ -36,11 +32,11 @@ public class ControllerManager : IControllerManager
         bool isGet = controllerDict.TryGetValue(requestCode, out controller);
         NotFoundException.ThrowIfNull(isGet, $"isGet '{requestCode}' Can't found controller for.");
 
-        string methodName = Enum.GetName(typeof(ActionCode), actionCode);
-        MethodInfo mi = controller.GetType().GetMethod(methodName);
-        NotFoundException.ThrowIfNull(mi, $"methodName '{mi}' there is no corresponding processing method.");
+        if(actionCode is ActionCode.CreateRoom) new RoomController().CreateRoom(client);
 
-        var room = actionCode is ActionCode.JoinRoom ? client.OnJoinRoom(client, new Guid(data)) : null;
+        if (actionCode is ActionCode.ListRoom) new RoomController().ListRooms(client);
+        Room? room = null;
+        if(actionCode is ActionCode.JoinRoom)room = client.OnJoinRoom(client, new Guid(data));
         if (room is not null && room.clientList.Count >= 1)
         {
             room.BroadCastMessage(client, requestCode, actionCode, client.UserID.ToString());

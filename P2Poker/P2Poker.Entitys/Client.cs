@@ -1,5 +1,6 @@
 using System.Net.Sockets;
 using System.Text;
+using Newtonsoft.Json;
 using P2Poker.Bean;
 using P2Poker.Dao;
 using P2Poker.Enums;
@@ -23,9 +24,9 @@ public class Client : ClientDAO, IPlayer
         }
         catch (SocketException e)
         {
-            if (e.NativeErrorCode.Equals(10035)) server.RemoveClient(this, this.socket);
-            if (e.NativeErrorCode.Equals(10054)) server.RemoveClient(this, this.socket);
-            if (e.ErrorCode.Equals(32)) server.RemoveClient(this, this.socket);
+            if (e.NativeErrorCode.Equals(10035) && roomController is not null) server.RemoveClient(this, this.socket);
+            if (e.NativeErrorCode.Equals(10054) && roomController is not null) server.RemoveClient(this, this.socket);
+            if (e.ErrorCode.Equals(32) && roomController is not null) server.RemoveClient(this, this.socket);
         }
         finally
         {
@@ -59,14 +60,17 @@ public class Client : ClientDAO, IPlayer
 
     public void OnStart()
     {
+        Thread sendMessageThread = new Thread(SendData);
+        sendMessageThread.Start();
         receiveDone = new ManualResetEvent(false);
         controllerManager = new ControllerManager();
         if (client == null || !client.Connected) return;
-        HandleClient();
+        SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.UserId, UserID.ToString())));
+        client.BeginReceive(buffer, 0, 1024, SocketFlags.None, new AsyncCallback(ReceiveCallback), null);
     }
     public void SendData(object? obj)
     {
-        Send((byte[])obj);
+        Send((byte[])obj!);
     }
 
     void HandleClient()
@@ -81,15 +85,11 @@ public class Client : ClientDAO, IPlayer
             }
             catch (SocketException e)
             {
-                if (e.NativeErrorCode.Equals(10035)) server.RemoveClient(this, this.socket);
-                if (e.NativeErrorCode.Equals(10054)) server.RemoveClient(this, this.socket);
-                if (e.ErrorCode.Equals(32)) server.RemoveClient(this, this.socket);
-            }
-            finally
-            {
+                if (e.NativeErrorCode.Equals(10035) && roomController is not null) server.RemoveClient(this, this.socket);
+                if (e.NativeErrorCode.Equals(10054) && roomController is not null) server.RemoveClient(this, this.socket);
+                if (e.ErrorCode.Equals(32) && roomController is not null) server.RemoveClient(this, this.socket);
             }
         }
-
     }
 
     public void ReceiveCallback(IAsyncResult ar)
@@ -106,11 +106,10 @@ public class Client : ClientDAO, IPlayer
         }
         catch (SocketException e)
         {
-            if (e.NativeErrorCode.Equals(10035)) server.RemoveClient(this, this.socket);
-            if (e.NativeErrorCode.Equals(10054)) server.RemoveClient(this, this.socket);
-            if (e.ErrorCode.Equals(32)) server.RemoveClient(this, this.socket);
+            if (e.NativeErrorCode.Equals(10035) && roomController is not null) server.RemoveClient(this, this.socket);
+            if (e.NativeErrorCode.Equals(10054)&& roomController is not null) server.RemoveClient(this, this.socket);
+            if (e.ErrorCode.Equals(32)&& roomController is not null) server.RemoveClient(this, this.socket);
         }
-        finally{}
     }
 
     public Room? OnJoinRoom(IPlayer client, Guid guid)
