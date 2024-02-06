@@ -134,86 +134,199 @@ D:/AzureProjects/P2Poker/P2Poker/obj/Debug/net8.0/ref/P2Poker.dll
 /mnt/6E6236376236047D/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/System.IO.Pipelines.dll
 /mnt/6E6236376236047D/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/runtimes/win-x64/nativeassets/netcoreapp2.2/aspnetcorev2_inprocess.dll
 /mnt/6E6236376236047D/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/runtimes/win-x86/nativeassets/netcoreapp2.2/aspnetcorev2_inprocess.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.exe
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.deps.json
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.runtimeconfig.json
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.pdb
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Core.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.HostFiltering.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Hosting.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Hosting.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Http.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Extensions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Features.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.HttpOverrides.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Routing.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Routing.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.IIS.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.IISIntegration.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Core.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.WebUtilities.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.CommandLine.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.UserSecrets.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Hosting.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.Configuration.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.Console.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.Debug.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.EventLog.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.EventSource.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\System.IO.Pipelines.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\runtimes\win-x64\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
-D:\AzureProjects\P2Poker\P2Poker\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.csproj.AssemblyReference.cache
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.GeneratedMSBuildEditorConfig.editorconfig
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.AssemblyInfoInputs.cache
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.AssemblyInfo.cs
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.csproj.CoreCompileInputs.cache
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.sourcelink.json
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.csproj.CopyComplete
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.dll
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\refint\P2Poker.dll
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.pdb
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.genruntimeconfig.cache
-D:\AzureProjects\P2Poker\P2Poker\obj\Debug\net8.0\ref\P2Poker.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.Core.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Connections.Abstractions.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Diagnostics.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.HostFiltering.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Hosting.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Http.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Http.Abstractions.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Http.Extensions.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Http.Features.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.HttpOverrides.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Routing.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Routing.Abstractions.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.IIS.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.IISIntegration.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.Core.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.Https.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.WebUtilities.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.ObjectPool.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Net.Http.Headers.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/System.IO.Pipelines.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/runtimes/win-x64/nativeassets/netcoreapp2.2/aspnetcorev2_inprocess.dll
+D:/AzureProjects/P2Poker/P2Poker/bin/Debug/net8.0/runtimes/win-x86/nativeassets/netcoreapp2.2/aspnetcorev2_inprocess.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/P2Poker
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/P2Poker.deps.json
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/P2Poker.runtimeconfig.json
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/P2Poker.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/P2Poker.pdb
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.Core.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Connections.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Diagnostics.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.HostFiltering.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Hosting.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Hosting.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Http.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Http.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Http.Extensions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Http.Features.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.HttpOverrides.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Routing.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Routing.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.IIS.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.IISIntegration.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.Core.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.Https.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.AspNetCore.WebUtilities.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Json.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.UserSecrets.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Physical.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Hosting.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Logging.Configuration.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Logging.Console.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Logging.Debug.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Logging.EventLog.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Logging.EventSource.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.ObjectPool.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Microsoft.Net.Http.Headers.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/Newtonsoft.Json.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/System.Diagnostics.EventLog.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/System.IO.Pipelines.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/runtimes/win-x64/nativeassets/netcoreapp2.2/aspnetcorev2_inprocess.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/runtimes/win-x86/nativeassets/netcoreapp2.2/aspnetcorev2_inprocess.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.csproj.AssemblyReference.cache
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.AssemblyInfoInputs.cache
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.AssemblyInfo.cs
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.csproj.CoreCompileInputs.cache
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.sourcelink.json
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.csproj.CopyComplete
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/refint/P2Poker.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.pdb
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/P2Poker.genruntimeconfig.cache
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/P2Poker/P2Poker/obj/Debug/net8.0/ref/P2Poker.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.exe
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.deps.json
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.runtimeconfig.json
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\P2Poker.pdb
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Core.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.HostFiltering.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Hosting.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Hosting.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Http.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Extensions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Features.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.HttpOverrides.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Routing.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Routing.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.IIS.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.IISIntegration.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.AspNetCore.WebUtilities.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.CommandLine.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Hosting.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.Configuration.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.Console.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.Debug.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.EventLog.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Logging.EventSource.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\System.IO.Pipelines.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\runtimes\win-x64\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+E:\Azure Projects\P2Poker\P2Poker\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.csproj.AssemblyReference.cache
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.GeneratedMSBuildEditorConfig.editorconfig
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.AssemblyInfoInputs.cache
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.AssemblyInfo.cs
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.csproj.CoreCompileInputs.cache
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.sourcelink.json
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.csproj.CopyComplete
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.dll
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\refint\P2Poker.dll
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.pdb
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\P2Poker.genruntimeconfig.cache
+E:\Azure Projects\P2Poker\P2Poker\obj\Debug\net8.0\ref\P2Poker.dll

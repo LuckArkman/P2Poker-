@@ -2,6 +2,7 @@ using System.Text;
 using Newtonsoft.Json;
 using P2Poker.Enums;
 using P2Poker.Exceptions;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace P2Poker.Bean;
 
@@ -22,6 +23,6 @@ public class Message
         processDataCallback(obj.requestCode, obj.actionCode, obj._string);
     }
 
-    private T? DeserializeFromString<T>(string s)
-        => JsonConvert.DeserializeObject<T>(s);
+    T? DeserializeFromString<T>(string s)
+    =>JsonConvert.DeserializeObject<T>(s);
 }

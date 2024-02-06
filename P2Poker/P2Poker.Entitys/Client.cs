@@ -123,6 +123,11 @@ public class Client : ClientDAO, IPlayer
         return rom!;
     }
 
+    public void Remove(IPlayer player)
+    {
+        
+    }
+
     private void OnProcessMessage(RequestCode requestCode, ActionCode actionCode, string data)
     =>server.HandleRequest(requestCode, actionCode, data, this);
 

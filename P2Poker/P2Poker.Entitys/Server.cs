@@ -70,7 +70,7 @@ public class Server : ServerDAO, IServer
             lock (reposit.Get(player.roomController.UUID).clientList)
             {
                 reposit.Get(player.roomController.UUID).clientList.Remove(player);
-                Console.WriteLine($"{nameof(RemoveClient)} In Server Cliente Id {player.UserID} has be desconnected");
+                Console.WriteLine($"{player.UserID} has be desconnected");
             }
         }
     }

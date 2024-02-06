@@ -29,4 +29,5 @@ public interface IPlayer
     void Send(byte[] bytes);
     void SendData(object? obj);
     Room? OnJoinRoom(IPlayer client, Guid guid);
+    void Remove(IPlayer player);
 }

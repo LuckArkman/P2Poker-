@@ -11,8 +11,12 @@ public class ControllerManager : IControllerManager
     private Dictionary<RequestCode, BaseController> controllerDict = new Dictionary<RequestCode, BaseController>();
     private Server server { get; set; }
 
-    public ControllerManager(){}
-    public ControllerManager(Server server) {
+    public ControllerManager()
+    {
+    }
+
+    public ControllerManager(Server server)
+    {
         this.server = server;
         Init();
     }
@@ -32,44 +36,34 @@ public class ControllerManager : IControllerManager
         bool isGet = controllerDict.TryGetValue(requestCode, out controller);
         NotFoundException.ThrowIfNull(isGet, $"isGet '{requestCode}' Can't found controller for.");
 
-        if(actionCode is ActionCode.CreateRoom) new RoomController().CreateRoom(client);
+        if (actionCode is ActionCode.CreateRoom) new RoomController().CreateRoom(client);
 
         if (actionCode is ActionCode.ListRoom) new RoomController().ListRooms(client);
         Room? room = null;
-        if(actionCode is ActionCode.JoinRoom)room = client.OnJoinRoom(client, new Guid(data));
+        if (actionCode is ActionCode.JoinRoom) room = client.OnJoinRoom(client, new Guid(data));
         if (room is not null && room.clientList.Count > 1)
         {
             room.BroadCastMessage(client, requestCode, actionCode, client.UserID.ToString());
-            var ls = from cl in room.clientList where cl.UserID != client.UserID && cl.socket.Connected select cl;
-            var cls = ls.ToList();
-            int i = 0;
-            while (i < ls.Count())
+            var ls = from cl in room.clientList where cl.UserID != client.UserID select cl;
+            var offCl = from of in ls.ToList() where !of.socket.Connected select of;
+            offCl.ToList().ForEach(x => x.Remove(x));
+            var cls = from o in ls.ToList() where o.socket.Connected select o;
+            if (cls.Count() <= 1)client.SendData(
+                Message.PackData(
+                    new Msg(
+                        RequestCode.User,
+                        ActionCode.JoinRoom,
+                    client.UserID.ToString())));
+            if (cls.Count() > 1)
             {
-                await Task.Delay(50);
-                if(cls[i].socket.Connected) room.SendMessage(client, RequestCode.Room, ActionCode.JoinRoom, cls[i].UserID.ToString());
-                if (!cls[i].socket.Connected)
+                foreach (var pl in cls)
                 {
-                    lock (cls)
-                    {
-                        cls.Remove(cls[i]);
-                    }
+                    if (pl.UserID != client.UserID) room.SendMessage(client, RequestCode.Room, ActionCode.JoinRoom, pl.UserID.ToString());
                 }
-                i++;
-            }
-
-            int c = 0;
-            while (c < ls.Count())
-            {
-                await Task.Delay(50);
-                if(cls[c].socket.Connected) room.SendMessage(cls[c], RequestCode.User, actionCode, client.UserID.ToString());
-                if (!cls[c].socket.Connected)
+                foreach (var pl in cls)
                 {
-                    lock (cls)
-                    {
-                        cls.Remove(cls[c]);
-                    }
+                    if (pl.UserID != client.UserID) room.SendMessage(pl, RequestCode.Room, ActionCode.JoinRoom, client.UserID.ToString());
                 }
-                c++;
             }
         }
 
