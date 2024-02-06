@@ -1,3 +1,4 @@
+using P2Poker.Entitys;
 using P2Poker.Enums;
 using P2Poker.Interfaces;
 using P2Poker.Strucs;
@@ -7,7 +8,7 @@ namespace P2Poker.Dao;
 
     public class RoomControllerDAO : IBaseController, IRoomController
     {
-        
+        public GameController _gameController { get; set; }
         public IStartTableContext tableContext { get; set; }
         public List<Guid> Tablecards = new List<Guid>();
         public Dictionary<string, Pot> _pot = new Dictionary<string, Pot>();

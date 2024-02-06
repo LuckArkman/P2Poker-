@@ -1,4 +1,5 @@
 using P2Poker.Dao;
+using P2Poker.Entitys;
 using P2Poker.Enums;
 using P2Poker.Interfaces;
 
@@ -8,6 +9,16 @@ public class Room : RoomControllerDAO
 {
     public Room()
     {
+    }
+
+    public GameController gameController()
+    {
+        if (_gameController is null)
+        {
+            _gameController = new GameController();
+            return _gameController;
+        }
+        return _gameController;
     }
 
     public void OnStart()

@@ -6,40 +6,43 @@ namespace P2Poker.Entitys;
 
 public class GameController : BaseController
 {
+    public Dictionary<Guid,IPlayer> clientsGO = new Dictionary<Guid,IPlayer>();
     public GameController()
         => requestCode = RequestCode.Game;
     
-    public string StartGame(string data, IPlayer client)
+    public void StartGame(Dictionary<Guid, IPlayer> clientsGo)
     {
-        if (client.IsHouseOwner())
+    }
+    public void Action( IPlayer client,string data)
+    {
+    }
+    public void Cobrir( IPlayer client,string data)
+    {
+    }
+    public void Bet(IPlayer client,string data)
+    {
+    }
+
+    public void Game(ActionCode actionCode, IPlayer client,  string data)
+    {
+        var room = client.roomController;
+        if (actionCode == ActionCode.StartGame)
         {
-            var room = client.roomController;
-            room.BroadCastMessage(client, RequestCode.Game,ActionCode.StartGame, ((int)ReturnCode.Success).ToString());
-            room.StartTimer();
-            return ((int)ReturnCode.Success).ToString();
+            if (client.UserID == room.client.UserID && clientsGO.Count >= 3) StartGame(clientsGO);
+            clientsGO.Add(client.UserID, client);
+            if(clientsGO.Count >=3) room.client.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.StartGame, "")));
         }
-        else
-        {
-            return ((int)ReturnCode.Fail).ToString();
-        }
+        if (actionCode == ActionCode.Bet)Bet(client, data);
+        if (actionCode == ActionCode.Cobrir)Cobrir(client, data);
+        if (actionCode == ActionCode.Pass)Pass(client, data);
+        if (actionCode == ActionCode.Check)Check(client, data);
     }
-    public string Action(string data, IPlayer client, Server server)
+
+    private void Check(IPlayer client, string data)
     {
-        var room = client.roomController;
-        room.BroadCastMessage(client, RequestCode.Game,ActionCode.turn, data);
-        return data;
     }
-    public string Cobrir(string data, IPlayer client, Server server)
+
+    private void Pass(IPlayer client, string data)
     {
-        var room = client.roomController;
-        room.BroadCastMessage(client, RequestCode.Game, ActionCode.Cobrir, data);
-        return data;
-    }
-    public string Bet(string data, IPlayer client, Server server)
-    {
-        int damage = int.Parse(data);
-        var room = client.roomController;
-        room.TakeBet(damage,client);
-        return data;
     }
 }
