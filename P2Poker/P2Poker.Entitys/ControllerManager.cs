@@ -47,7 +47,7 @@ public class ControllerManager : IControllerManager
         if (actionCode is ActionCode.Pass) _gameController = client.roomController.gameController();
         if (actionCode is ActionCode.Check) _gameController = client.roomController.gameController();
         if (_room is not null) _roomController = new RoomController();
-        if (_roomController is not null) _roomController.OnRoom(actionCode, client, _room);
+        if (_roomController is not null) _roomController.OnRoom(requestCode,actionCode, client, _room);
         if (_gameController is not null) _gameController.Game(actionCode, client, data);
         await Task.CompletedTask;
     }

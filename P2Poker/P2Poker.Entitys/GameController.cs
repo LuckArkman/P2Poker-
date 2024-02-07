@@ -12,7 +12,7 @@ public class GameController : BaseController
     
     public void StartGame(List<IPlayer> clientsGo, IPlayer client, Room? room)
     {
-        if (client.UserID == room.client.UserID && clientsGO.Count >= 3) OnStartGame(clientsGO);
+        if (client.UserID == room!.client.UserID && clientsGO.Count >= 3) OnStartGame(clientsGO);
         clientsGO.Add(client.UserID, client);
         if(clientsGO.Count >=3) room.client.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.StartGame, "")));
     }
