@@ -8,8 +8,11 @@ namespace P2Poker.Entitys;
 
 public class ControllerManager : IControllerManager
 {
-    private Dictionary<RequestCode, BaseController> controllerDict = new Dictionary<RequestCode, BaseController>();
-    private Server server { get; set; }
+    Dictionary<RequestCode, BaseController> controllerDict = new Dictionary<RequestCode, BaseController>();
+    GameController? _gameController { get; set; }
+    Room? _room { get; set; }
+    RoomController? _roomController { get; set; }
+    Server server { get; set; }
 
     public ControllerManager()
     {
@@ -35,44 +38,17 @@ public class ControllerManager : IControllerManager
         BaseController controller;
         bool isGet = controllerDict.TryGetValue(requestCode, out controller);
         NotFoundException.ThrowIfNull(isGet, $"isGet '{requestCode}' Can't found controller for.");
-        GameController? _gameController;
-        _gameController = actionCode is ActionCode.StartGame ? client.roomController.gameController() : null;
-        _gameController = actionCode is ActionCode.Bet ? client.roomController.gameController() : null;
-        _gameController = actionCode is ActionCode.Cobrir ? client.roomController.gameController() : null;
-        _gameController = actionCode is ActionCode.Pass ? client.roomController.gameController() : null;
-        _gameController = actionCode is ActionCode.Check ? client.roomController.gameController() : null;
+        if (actionCode is ActionCode.CreateRoom) _room = new RoomController().CreateRoom(client);
+        if (actionCode is ActionCode.ListRoom) _room = client.getRoom();
+        if (actionCode is ActionCode.JoinRoom) _room = client.OnJoinRoom(client, new Guid(data));
+        if (actionCode is ActionCode.StartGame) _gameController = client.roomController.gameController();
+        if (actionCode is ActionCode.Bet) _gameController = client.roomController.gameController();
+        if (actionCode is ActionCode.Cobrir) _gameController = client.roomController.gameController();
+        if (actionCode is ActionCode.Pass) _gameController = client.roomController.gameController();
+        if (actionCode is ActionCode.Check) _gameController = client.roomController.gameController();
+        if (_room is not null) _roomController = new RoomController();
+        if (_roomController is not null) _roomController.OnRoom(actionCode, client, _room);
         if (_gameController is not null) _gameController.Game(actionCode, client, data);
-        if (actionCode is ActionCode.CreateRoom) new RoomController().CreateRoom(client);
-
-        if (actionCode is ActionCode.ListRoom) new RoomController().ListRooms(client);
-        Room? room = null;
-        if (actionCode is ActionCode.JoinRoom) room = client.OnJoinRoom(client, new Guid(data));
-        if (room is not null && room.clientList.Count > 1)
-        {
-            room.BroadCastMessage(client, requestCode, actionCode, client.UserID.ToString());
-            var ls = from cl in room.clientList where cl.UserID != client.UserID select cl;
-            var offCl = from of in ls.ToList() where !of.socket.Connected select of;
-            offCl.ToList().ForEach(x => x.Remove(x));
-            var cls = from o in ls.ToList() where o.socket.Connected select o;
-            if (cls.Count() <= 1)client.SendData(
-                Message.PackData(
-                    new Msg(
-                        RequestCode.User,
-                        ActionCode.JoinRoom,
-                    client.UserID.ToString())));
-            if (cls.Count() > 1)
-            {
-                foreach (var pl in cls)
-                {
-                    if (pl.UserID != client.UserID) room.SendMessage(client, RequestCode.Room, ActionCode.JoinRoom, pl.UserID.ToString());
-                }
-                foreach (var pl in cls)
-                {
-                    if (pl.UserID != client.UserID) room.SendMessage(pl, RequestCode.Room, ActionCode.JoinRoom, client.UserID.ToString());
-                }
-            }
-        }
-
         await Task.CompletedTask;
     }
 }

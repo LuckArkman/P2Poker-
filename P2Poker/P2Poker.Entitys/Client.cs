@@ -118,7 +118,6 @@ public class Client : ClientDAO, IPlayer
         var reposit = Singleton._singleton().CreateRoomRepository(db);
         var rom = reposit.Get(guid);
         NotFoundException.ThrowIfNull(rom, $"Room '{guid}' not found.");
-        if (rom.clientList.Count() < 6) rom.JoinClient(client);
         roomController = rom;
         return rom!;
     }
@@ -162,6 +161,16 @@ public class Client : ClientDAO, IPlayer
 
     public void EndGame(IEndGameContext context)
     {
+    }
+
+    public Room? getRoom()
+    {
+        if (roomController is null)
+        {
+            roomController = new Room();
+            return roomController;
+        }
+        return roomController;
     }
 
     public void StartGame(IStartGameContext context) => startGameContext = context;

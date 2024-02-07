@@ -15,6 +15,7 @@ public interface IPlayer
     int PlayerCoins { get; }
     int BuyIn { get; }
     Room roomController { get; set; }
+    Room? getRoom();
     void StartGame(IStartGameContext context);
     void StartHand(IStartHandContext context);
     void StartRound(IStartRoundContext context);

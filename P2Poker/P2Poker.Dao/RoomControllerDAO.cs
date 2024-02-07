@@ -1,3 +1,4 @@
+using P2Poker.Bean;
 using P2Poker.Entitys;
 using P2Poker.Enums;
 using P2Poker.Interfaces;
@@ -9,6 +10,7 @@ namespace P2Poker.Dao;
     public class RoomControllerDAO : IBaseController, IRoomController
     {
         public GameController _gameController { get; set; }
+        public Guid GetUUID() => UUID;
         public IStartTableContext tableContext { get; set; }
         public List<Guid> Tablecards = new List<Guid>();
         public Dictionary<string, Pot> _pot = new Dictionary<string, Pot>();
@@ -73,4 +75,15 @@ namespace P2Poker.Dao;
         public void TakeBet(int damage, IPlayer client){}
         public bool IsPlayerWinner(IPlayer client)
             => false;
+
+        public void BroadCastMessage(IPlayer player, RequestCode requestCode, ActionCode actionCode, string message)
+            => clientList.ToList().ForEach(x=>
+            {
+                if (x.UserID != player.UserID) clientList.Find(u => u.UserID == x.UserID)!.SendData(Message.PackData(new Msg(requestCode, actionCode, message)));
+            });
+        public List<IPlayer> Clients()
+            => clientList;
+
+        public void SendMessage(IPlayer player, RequestCode requestCode, ActionCode actionCode, string message)
+            => player.SendData(Message.PackData(new Msg(requestCode, actionCode, message)));
     }
