@@ -21,15 +21,43 @@ namespace P2Poker.Dao;
         public List<IPlayer> clientList = new List<IPlayer>();
         public Dictionary<Guid,IPlayer> clientsGO = new Dictionary<Guid,IPlayer>();
         public List<string> clearList = new List<string>();
-        public List<string> cards = new List<string>();
+        public List<Card> cards = new List<Card>();
         public Dictionary<Guid,ClientDAO> cardsList = new Dictionary<Guid,ClientDAO>();
         protected RequestCode requestCode = RequestCode.None;
         public IPlayer? client;
         
-        public void StartCards()
+        public void StartCards(Dictionary<Guid, IPlayer> _clientsGo)
         {
-            
+            clientsGO = _clientsGo;
+            ShortCards(clientsGO);
             SendCards();
+        }
+
+        void ShortCards(Dictionary<Guid, IPlayer> clientsGo)
+        {
+            foreach (var c in clientsGo)
+            {
+                if (c.Value.handContext is null) OnStartHand(c.Value);
+            }
+
+            _gameController.SendCards();
+        }
+
+        private void OnStartHand(IPlayer player)
+        {
+            Card _card = GetCard();
+            player.handContext = new StartHandContext(_card.UUID, _card.UUID, player.UserID, player.handNumber, player.PlayerCoins);
+            lock (cards)
+            {
+                cards.Remove(_card);
+            }
+        }
+
+        private Card GetCard()
+        {
+            Random rnd = new Random();
+            int num = rnd.Next(cards.Count);
+            return cards[num];
         }
 
         public void Tablecard()

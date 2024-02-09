@@ -1,5 +1,6 @@
 using System.Net;
 using System.Net.Sockets;
+using Newtonsoft.Json;
 using P2Poker.Bean;
 using P2Poker.Dao;
 using P2Poker.Enums;
@@ -10,6 +11,7 @@ namespace P2Poker.Entitys;
 
 public class Server : ServerDAO, IServer
 {
+    public List<Card> _cards = new List<Card>();
     public Server(){}
     public Server(string host, int port)
     {
@@ -18,6 +20,7 @@ public class Server : ServerDAO, IServer
         receiveDone = new ManualResetEvent(false);
         IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse(host), port);
         Start(ipEndPoint);
+        
     }
 
     void Start(IPEndPoint ipEndPoint)

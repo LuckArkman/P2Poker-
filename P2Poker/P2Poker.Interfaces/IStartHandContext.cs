@@ -8,9 +8,9 @@ public interface IStartHandContext
 
     Guid PlayerName { get; }
 
-    int HandNumber { get; }
+    int HandNumber { get; set; }
 
-    int MoneyLeft { get; }
+    int MoneyLeft { get; set; }
 
-    int SmallBlind { get; }
+    int SmallBlind { get; set; }
 }

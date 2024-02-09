@@ -143,9 +143,7 @@ public class Client : ClientDAO, IPlayer
 
     public void StartHand(IStartHandContext context) => handContext = context;
 
-    public void StartRound(IStartRoundContext context)
-    {
-    }
+    public void StartRound(IStartHandContext context) => handContext = context;
 
     public PlayerAction PostingBlind(IPostingBlindContext context) => new PlayerAction(PlayerActionType.Fold);
 

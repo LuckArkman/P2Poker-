@@ -90,8 +90,7 @@ public class RoomController : BaseController
 
     public void OnRoom(RequestCode requestCode, ActionCode actionCode, IPlayer client, Room? room)
     {
-        if (actionCode is ActionCode.CreateRoom)
-            room!.SendMessage(client, RequestCode.Room, ActionCode.CreateRoom, room.GetUUID().ToString());
+        if (actionCode is ActionCode.CreateRoom)room!.SendMessage(client, RequestCode.Room, ActionCode.CreateRoom, room.GetUUID().ToString());
         if (actionCode is ActionCode.JoinRoom) JoinRoom(requestCode, actionCode, client, room);
         if (actionCode is ActionCode.ListRoom) ListRooms(client);
     }

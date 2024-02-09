@@ -18,7 +18,7 @@ public interface IPlayer
     Room? getRoom();
     void StartGame(IStartGameContext context);
     void StartHand(IStartHandContext context);
-    void StartRound(IStartRoundContext context);
+    void StartRound(IStartHandContext context);
     PlayerAction PostingBlind(IPostingBlindContext context);
     PlayerAction GetTurn(IGetTurnContext context);
     void EndRound(IEndRoundContext context);

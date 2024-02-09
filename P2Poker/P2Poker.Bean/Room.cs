@@ -65,7 +65,6 @@ public class Room : RoomControllerDAO
         {
             client = player;
             await Task.Delay(2000);
-            Console.WriteLine(nameof(SetDealer));
             player.SendData(Message.PackData(new Msg(RequestCode.Room, ActionCode.dealer, player.UserID.ToString())));
         }
         await Task.CompletedTask;
