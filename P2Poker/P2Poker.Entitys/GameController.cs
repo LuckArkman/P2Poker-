@@ -14,7 +14,28 @@ public class GameController : BaseController
     {
         if (client.UserID == room!.client.UserID && clientsGO.Count >= 3) OnStartGame(clientsGO);
         clientsGO.Add(client.UserID, client);
-        if(clientsGO.Count >=3) room.client.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.StartGame, "")));
+        UserIsGo(client, room);
+        room.client.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.StartGame, client.UserID.ToString())));
+        if(clientsGO.Count >=3) room.client.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.StartGame, client.UserID.ToString())));
+    }
+
+    private async void UserIsGo(IPlayer client, Room room)
+    {
+        var AllUser = room.clientList.FindAll(x => x.UserID != client.UserID);
+        int i = 0;
+        while (i < AllUser.Count)
+        {
+            await Task.Delay(50);
+            AllUser[i].SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.StartGame, client.UserID.ToString())));
+            i++;
+        }
+        await Task.CompletedTask;
+    }
+
+    private async void UserIsGo(IPlayer client)
+    {
+         
+        
     }
 
     private void OnStartGame(Dictionary<Guid, IPlayer> clientsGo)
