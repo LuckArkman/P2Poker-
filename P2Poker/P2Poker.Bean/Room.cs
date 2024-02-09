@@ -54,8 +54,20 @@ public class Room : RoomControllerDAO
 
     public void JoinClient(IPlayer player)
     {
-        if (clientList.Count <= 0) client = player;
+        if (client is null) SetDealer(player);
         clientList.Add(player);
         player.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.JoinRoom, player.UserID.ToString())));
+    }
+    private async void SetDealer(IPlayer player)
+    {
+        client = null;
+        while (client is null)
+        {
+            client = player;
+            await Task.Delay(2000);
+            Console.WriteLine(nameof(SetDealer));
+            player.SendData(Message.PackData(new Msg(RequestCode.Room, ActionCode.dealer, player.UserID.ToString())));
+        }
+        await Task.CompletedTask;
     }
 }

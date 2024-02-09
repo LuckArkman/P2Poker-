@@ -23,5 +23,6 @@ public enum ActionCode
     turn,
     Pass,
     finishHand,
+    dealer,
 
 }
