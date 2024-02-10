@@ -25,7 +25,6 @@ namespace P2Poker.Dao;
         public Dictionary<Guid,ClientDAO> cardsList = new Dictionary<Guid,ClientDAO>();
         protected RequestCode requestCode = RequestCode.None;
         public IPlayer? client;
-        
         public void StartCards(Dictionary<Guid, IPlayer> _clientsGo)
         {
             clientsGO = _clientsGo;
@@ -40,7 +39,7 @@ namespace P2Poker.Dao;
                 if (c.Value.handContext is null) OnStartHand(c.Value);
             }
 
-            _gameController.SendCards();
+            _gameController.SendCards(cards);
         }
 
         private void OnStartHand(IPlayer player)
