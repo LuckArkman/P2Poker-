@@ -44,11 +44,21 @@ namespace P2Poker.Dao;
 
         private void OnStartHand(IPlayer player)
         {
-            Card _card = GetCard();
-            player.handContext = new StartHandContext(_card.UUID, _card.UUID, player.UserID, player.handNumber, player.PlayerCoins);
+            Card _card1 = GetCard();
+            Card _card2 = GetCard();
+            while (_card1.UUID == _card2.UUID)
+            {
+                _card1 = GetCard();
+                _card2 = GetCard();
+            }
+            player.handContext = new StartHandContext(_card1.UUID, _card2.UUID, player.UserID, player.handNumber, player.PlayerCoins);
             lock (cards)
             {
-                cards.Remove(_card);
+                cards.Remove(_card1);
+            }
+            lock (cards)
+            {
+                cards.Remove(_card2);
             }
         }
 

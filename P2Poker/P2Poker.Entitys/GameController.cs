@@ -7,39 +7,31 @@ namespace P2Poker.Entitys;
 
 public class GameController : BaseController
 {
-    public Dictionary<Guid, IPlayer> clientsGO = new Dictionary<Guid, IPlayer>();
+    Dictionary<Guid, IPlayer> clientsGO = new Dictionary<Guid, IPlayer>();
 
-    public List<Card> _cards = new List<Card>();
+    List<Card> _cards = new List<Card>();
 
     public GameController()
         => requestCode = RequestCode.Game;
 
-    public void StartGame(List<IPlayer> clientsGo, IPlayer client, Room? room)
+    public void StartGame(List<IPlayer> clientsList, IPlayer client, Room? room)
     {
+        if (clientsGO.GetValueOrDefault(client.UserID) is null)clientsGO.TryAdd(client.UserID, client);
         Console.WriteLine(clientsGO.Count);
-        clientsGO.Add(client.UserID, client);
-        if (client.UserID == room!.client.UserID && clientsGO.Count >= 2) OnStartGame(clientsGO, room);
-        UserIsGo(client, room);
-        if (client.UserID != room.client.UserID)
-            room.client.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.StartGame,
-                client.UserID.ToString())));
-        if (clientsGO.Count >= 2 && client.UserID != room.client.UserID)
-            room.client.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.StartGame,
-                client.UserID.ToString())));
+        var go = room.clientList.FindAll(c => c.UserID != client.UserID);
+        SendMessageGo(go, client);
+        if (client.UserID == room!.client.UserID && clientsGO.Count >= 3) OnStartGame(clientsGO, room);
     }
 
-    private async void UserIsGo(IPlayer client, Room room)
+    private async void SendMessageGo(List<IPlayer> go, IPlayer client)
     {
-        var AllUser = room.clientList.FindAll(x => x.UserID != client.UserID);
         int i = 0;
-        while (i < AllUser.Count)
+        while (i < go.Count)
         {
             await Task.Delay(50);
-            AllUser[i].SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.StartGame,
-                client.UserID.ToString())));
+            go[i].SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.StartGame, client.UserID.ToString())));
             i++;
         }
-
         await Task.CompletedTask;
     }
 
@@ -94,11 +86,9 @@ public class GameController : BaseController
         while (i < players.Count)
         {
             await Task.Delay(50);
-            players[i].SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.cardGame,
-                JsonConvert.SerializeObject(players[i].handContext))));
+            players[i].SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.cardGame, JsonConvert.SerializeObject(players[i].handContext))));
             i++;
         }
-
         await Task.CompletedTask;
     }
 }
