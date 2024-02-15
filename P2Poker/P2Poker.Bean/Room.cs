@@ -52,11 +52,14 @@ public class Room : RoomControllerDAO
     {
     }
 
-    public void JoinClient(IPlayer player)
+    public async void JoinClient(IPlayer player)
     {
         if (client is null) SetDealer(player);
         clientList.Add(player);
+        player.SendData(Message.PackData(new Msg(RequestCode.Room, ActionCode.UserPosition, clientList.Count.ToString())));
+        await Task.Delay(50);
         player.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.JoinRoom, player.UserID.ToString())));
+
     }
     private async void SetDealer(IPlayer player)
     {

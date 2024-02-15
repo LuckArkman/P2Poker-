@@ -22,6 +22,7 @@ public enum ActionCode
     Cobrir,
     turn,
     Pass,
+    UserPosition,
     finishHand,
     dealer,
 

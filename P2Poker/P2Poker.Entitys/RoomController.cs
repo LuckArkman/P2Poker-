@@ -15,7 +15,7 @@ public class RoomController : BaseController
         requestCode = RequestCode.Room;
     }
 
-    public void JoinRoom(RequestCode requestCode, ActionCode actionCode, IPlayer client, Room? _room)
+    public async void JoinRoom(RequestCode requestCode, ActionCode actionCode, IPlayer client, Room? _room)
     {
         if (_room.clientList.Count > 5) _room = null;
         if (_room.clientList.Count <= 5) _room.JoinClient(client);
