@@ -56,7 +56,7 @@ public class Room : RoomControllerDAO
     {
         if (client is null) SetDealer(player);
         clientList.Add(player);
-        player.SendData(Message.PackData(new Msg(RequestCode.Room, ActionCode.UserPosition, clientList.Count.ToString())));
+        player.SendData(Message.PackData(new Msg(RequestCode.Room, ActionCode.UserPosition, (clientList.Count -1).ToString())));
         await Task.Delay(50);
         player.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.JoinRoom, player.UserID.ToString())));
 
