@@ -17,7 +17,6 @@ public class GameController : BaseController
     public void StartGame(List<IPlayer> clientsList, IPlayer client, Room? room)
     {
         if (clientsGO.GetValueOrDefault(client.UserID) is null)clientsGO.TryAdd(client.UserID, client);
-        Console.WriteLine(clientsGO.Count);
         var go = room.clientList.FindAll(c => c.UserID != client.UserID);
         SendMessageGo(go, client);
         if (client.UserID == room!.client.UserID && clientsGO.Count >= 3) OnStartGame(clientsGO, room);
