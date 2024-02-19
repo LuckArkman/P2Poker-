@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AzureProjects\\P2Poker\\P2Poker\\P2Poker.csproj": {}
+    "D:\\GitHub Projects\\P2Poker\\P2Poker\\P2Poker.csproj": {}
   },
   "projects": {
-    "D:\\AzureProjects\\P2Poker\\P2Poker\\P2Poker.csproj": {
+    "D:\\GitHub Projects\\P2Poker\\P2Poker\\P2Poker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AzureProjects\\P2Poker\\P2Poker\\P2Poker.csproj",
+        "projectUniqueName": "D:\\GitHub Projects\\P2Poker\\P2Poker\\P2Poker.csproj",
         "projectName": "P2Poker",
-        "projectPath": "D:\\AzureProjects\\P2Poker\\P2Poker\\P2Poker.csproj",
+        "projectPath": "D:\\GitHub Projects\\P2Poker\\P2Poker\\P2Poker.csproj",
         "packagesPath": "C:\\Users\\mauri\\.nuget\\packages\\",
-        "outputPath": "D:\\AzureProjects\\P2Poker\\P2Poker\\obj\\",
+        "outputPath": "D:\\GitHub Projects\\P2Poker\\P2Poker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

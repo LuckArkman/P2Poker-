@@ -20,9 +20,7 @@ public class Server : ServerDAO, IServer
         receiveDone = new ManualResetEvent(false);
         IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse(host), port);
         Start(ipEndPoint);
-        
     }
-
     void Start(IPEndPoint ipEndPoint)
     {
         socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);

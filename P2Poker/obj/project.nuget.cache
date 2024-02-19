@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sPLoKW8ww8o6DCNsyAkt6LPMEEIQoNm+FKWJl9sLq4G3t3xvO7dzCSsrdDp0sigaK7gua0wPEMZYKBNhenEE6w==",
+  "dgSpecHash": "0h7FjsfAR1AWhoyQx02E+zqqREkGZUzKbNxdlEnQjPg3YuZ5y2xQ8A+xTEICzJo3/Lz7/Dyqan2b9JGRhgqBEg==",
   "success": true,
-  "projectFilePath": "D:\\AzureProjects\\P2Poker\\P2Poker\\P2Poker.csproj",
+  "projectFilePath": "D:\\GitHub Projects\\P2Poker\\P2Poker\\P2Poker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mauri\\.nuget\\packages\\fluentassertions\\7.0.0-alpha.3\\fluentassertions.7.0.0-alpha.3.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",

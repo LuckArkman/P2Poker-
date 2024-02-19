@@ -8,7 +8,7 @@ public class RoomManager
     public Guid uuid { get; set; }
     public int playerButton { get; set; }
     public int turn { get; set; }
-
+    
     public RoomManager(IStartTableContext tableContext, Guid uuid, int playerButton, int turn)
     {
         this.tableContext = tableContext;
