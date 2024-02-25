@@ -124,7 +124,8 @@ public class Client : ClientDAO, IPlayer
 
     public void Remove(IPlayer player)
     {
-        
+        if (roomController is not null) server.RemoveClient(this, this.socket);
+        if (roomController is null) server.CloseConnection(this, this.socket);
     }
 
     private void OnProcessMessage(RequestCode requestCode, ActionCode actionCode, string data)

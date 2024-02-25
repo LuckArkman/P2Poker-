@@ -11,7 +11,6 @@ namespace P2Poker.Entitys;
 
 public class Server : ServerDAO, IServer
 {
-    public List<Card> _cards = new List<Card>();
     public Server(){}
     public Server(string host, int port)
     {
@@ -74,5 +73,10 @@ public class Server : ServerDAO, IServer
                 Console.WriteLine($"{player.UserID} has be desconnected");
             }
         }
+    }
+
+    public void CloseConnection(IPlayer player, Socket socket)
+    {
+        player.socket.Shutdown(SocketShutdown.Both);
     }
 }
