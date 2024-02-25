@@ -134,7 +134,7 @@ public class Client : ClientDAO, IPlayer
             Console.WriteLine(e.Message);
         }
     }
-
+    
     private void OnProcessMessage(RequestCode requestCode, ActionCode actionCode, string data)
     =>server.HandleRequest(requestCode, actionCode, data, this);
 

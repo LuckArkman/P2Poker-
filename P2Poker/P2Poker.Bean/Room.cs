@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using P2Poker.Dao;
 using P2Poker.Entitys;
 using P2Poker.Enums;
@@ -75,6 +76,7 @@ public class Room : RoomControllerDAO
 
     public void RemoveClient(IPlayer o)
     {
+        Console.WriteLine(nameof(RemoveClient));
         clientList.ForEach(c =>
         {
             if (c.UserID == o.UserID)

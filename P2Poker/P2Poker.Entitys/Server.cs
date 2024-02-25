@@ -25,11 +25,6 @@ public class Server : ServerDAO, IServer
         socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         socket.Bind(ipEndPoint);
         socket.Listen(100);
-        Thread acceptThread = new Thread(AcceptConnections);
-        acceptThread.Start();
-    }
-    void AcceptConnections()
-    {
         socket.BeginAccept(ConnectCallback, null);
     }
 
