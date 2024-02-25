@@ -15,16 +15,18 @@ public class RoomController : BaseController
         requestCode = RequestCode.Room;
     }
 
-    public async void JoinRoom(RequestCode requestCode, ActionCode actionCode, IPlayer client, Room? _room)
+    public async void JoinRoom(RequestCode requestCode, ActionCode actionCode, IPlayer client, Room? room)
     {
+        Room? _room = room;
         if (_room.clientList.Count > 5) _room = null;
-        if (_room.clientList.Count <= 5) _room.JoinClient(client);
-        var ls = _room.clientList.FindAll(x => x.UserID != client.UserID);
-        var offCl = ls.FindAll(c => !c.socket.Connected);
-        if (offCl.Count > 0) offCl.ToList().ForEach(x => x.Remove(x));
-        var cls = ls.ToList().FindAll(x => x.socket.Connected);
+        if (_room.clientList.Count <= 5) _room = room;
         if (_room is not null)
         {
+            var ls = _room.clientList.FindAll(x => x.UserID != client.UserID);
+            var offCl = ls.FindAll(c => !c.socket.Connected);
+            if (offCl.Count > 0) offCl.ToList().ForEach(x => x.Remove(x));
+            _room.JoinClient(client);
+            var cls = ls.ToList().FindAll(x => x.socket.Connected);
             if (cls.Count > 0)
             {
                 SendUsersInRoom(cls, client, requestCode, actionCode, _room);
@@ -35,7 +37,8 @@ public class RoomController : BaseController
         }
     }
 
-    private async void SendUsersInRoom(List<IPlayer> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
+    private async void SendUsersInRoom(List<IPlayer> cls, IPlayer client, RequestCode requestCode,
+        ActionCode actionCode, Room _room)
     {
         int i = 0;
         while (i < cls.Count)
@@ -46,7 +49,8 @@ public class RoomController : BaseController
         }
     }
 
-    private async void SendUserInJoinRoom(List<IPlayer> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
+    private async void SendUserInJoinRoom(List<IPlayer> cls, IPlayer client, RequestCode requestCode,
+        ActionCode actionCode, Room _room)
     {
         int i = 0;
         while (i < cls.Count)
@@ -90,7 +94,8 @@ public class RoomController : BaseController
 
     public void OnRoom(RequestCode requestCode, ActionCode actionCode, IPlayer client, Room? room)
     {
-        if (actionCode is ActionCode.CreateRoom)room!.SendMessage(client, RequestCode.Room, ActionCode.CreateRoom, room.GetUUID().ToString());
+        if (actionCode is ActionCode.CreateRoom)
+            room!.SendMessage(client, RequestCode.Room, ActionCode.CreateRoom, room.GetUUID().ToString());
         if (actionCode is ActionCode.JoinRoom) JoinRoom(requestCode, actionCode, client, room);
         if (actionCode is ActionCode.ListRoom) ListRooms(client);
     }
