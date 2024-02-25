@@ -60,8 +60,6 @@ public class Client : ClientDAO, IPlayer
 
     public void OnStart()
     {
-        Thread sendMessageThread = new Thread(SendData);
-        sendMessageThread.Start();
         receiveDone = new ManualResetEvent(false);
         controllerManager = new ControllerManager();
         if (client == null || !client.Connected) return;

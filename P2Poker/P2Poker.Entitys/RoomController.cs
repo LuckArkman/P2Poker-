@@ -17,20 +17,14 @@ public class RoomController : BaseController
 
     public async void JoinRoom(RequestCode requestCode, ActionCode actionCode, IPlayer client, Room? room)
     {
-        Room? _room = room;
-        if (_room.clientList.Count > 5) _room = null;
-        if (_room.clientList.Count <= 5) _room = room;
+        Room? _room = null;
+        if (room.clientList.Count > 5) _room = null;
+        if (room.clientList.Count <= 5) _room = room;
         if (_room is not null)
         {
             var ls = _room.clientList.FindAll(x => x.UserID != client.UserID);
             var offCl = ls.FindAll(c => !c.socket.Connected);
-            if (offCl.Count > 0)
-            {
-                offCl.ForEach(of =>
-                    {
-                        _room.RemoveClient(of);
-                    });
-            }
+            if (offCl.Count > 0) offCl.ForEach(of => { _room.RemoveClient(of); });
             _room.JoinClient(client);
             var cls = ls.ToList().FindAll(x => x.socket.Connected);
             if (cls.Count > 0)
@@ -38,9 +32,8 @@ public class RoomController : BaseController
                 SendUsersInRoom(cls, client, requestCode, actionCode, _room);
                 SendUserInJoinRoom(cls, client, requestCode, actionCode, _room);
             }
-
-            if (_room is null) NotJoin(client);
         }
+        if (_room is null) NotJoin(client);
     }
 
     private async void SendUsersInRoom(List<IPlayer> cls, IPlayer client, RequestCode requestCode,
