@@ -24,7 +24,13 @@ public class RoomController : BaseController
         {
             var ls = _room.clientList.FindAll(x => x.UserID != client.UserID);
             var offCl = ls.FindAll(c => !c.socket.Connected);
-            if (offCl.Count > 0) offCl.ToList().ForEach(x => x.Remove(x));
+            if (offCl.Count > 0)
+            {
+                offCl.ForEach(of =>
+                    {
+                        _room.RemoveClient(of);
+                    });
+            }
             _room.JoinClient(client);
             var cls = ls.ToList().FindAll(x => x.socket.Connected);
             if (cls.Count > 0)

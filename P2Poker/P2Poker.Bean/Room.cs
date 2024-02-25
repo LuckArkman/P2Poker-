@@ -72,4 +72,18 @@ public class Room : RoomControllerDAO
         }
         await Task.CompletedTask;
     }
+
+    public void RemoveClient(IPlayer o)
+    {
+        clientList.ForEach(c =>
+        {
+            if (c.UserID == o.UserID)
+            {
+                lock (clientList)
+                {
+                    clientList.Remove(o);
+                }
+            }
+        });
+    }
 }
