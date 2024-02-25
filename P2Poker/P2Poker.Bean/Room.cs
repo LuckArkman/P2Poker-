@@ -12,7 +12,7 @@ public class Room : RoomControllerDAO
     {
     }
 
-    public GameController gameController()
+    public GameController GameController()
     {
         if (_gameController is null)
         {

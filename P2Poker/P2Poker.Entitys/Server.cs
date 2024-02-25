@@ -55,16 +55,14 @@ public class Server : ServerDAO, IServer
     public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, IPlayer client)
     => controllerManager.HandleRequest(requestCode, actionCode, data, client);
 
-    public void RemoveClient(IPlayer player, Socket socket)
+    public void RemoveClient(IPlayer player, Room _room)
     {
-        var db = Singleton._singleton().CreateDBContext();
-        var reposit = Singleton._singleton().CreateRoomRepository(db);
         player.socket.Shutdown(SocketShutdown.Both);
-        if (reposit.Get(player.roomController.UUID).clientList.Find(c => c.UserID == player.UserID) is not null)
+        if (_room.clientList.Find(c => c.UserID == player.UserID) is not null)
         {
-            lock (reposit.Get(player.roomController.UUID).clientList)
+            lock (_room.clientList)
             {
-                reposit.Get(player.roomController.UUID).clientList.Remove(player);
+                _room.clientList.Remove(player);
                 Console.WriteLine($"{player.UserID} has be desconnected");
             }
         }
