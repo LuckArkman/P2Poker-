@@ -49,7 +49,7 @@ public class Server : ServerDAO, IServer
         var db = Singleton._singleton().CreateDBContext();
         var reposit = Singleton._singleton().CreateRoomRepository(db);
         var rom = reposit.Get(RoomId);
-        var cl = rom.clientList.GetValueOrDefault(client.UserID);
+        var cl = rom.clientList.Find(x => x._guid == client.UserID);
     }
 
     public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, IPlayer client)
@@ -58,11 +58,12 @@ public class Server : ServerDAO, IServer
     public void RemoveClient(IPlayer player, Room _room)
     {
         player.socket.Shutdown(SocketShutdown.Both);
-        if (_room.clientList.GetValueOrDefault(player.UserID) is not null)
+        var u = _room.clientList.Find(c => c._guid == player.UserID);
+        if (_room.clientList.Find( x => x._guid == player.UserID) is not null)
         {
             lock (_room.clientList)
             {
-                _room.clientList.Remove(player.UserID);
+                _room.clientList.Remove(u);
                 Console.WriteLine($"{player.UserID} has be desconnected");
             }
         }

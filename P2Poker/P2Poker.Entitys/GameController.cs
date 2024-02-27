@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using P2Poker.Bean;
+using P2Poker.Dao;
 using P2Poker.Enums;
 using P2Poker.Interfaces;
 
@@ -17,18 +18,18 @@ public class GameController : BaseController
     public void StartGame(IPlayer client, Room? room)
     {
         if (clientsGO.GetValueOrDefault(client.UserID) is null)clientsGO.TryAdd(client.UserID, client);
-        var go = room!.clientList.ToList().FindAll(c => c.Key != client.UserID);
+        var go = room!.clientList.ToList().FindAll(c => c._guid != client.UserID);
         SendMessageGo(go, client);
         if (client.UserID == room!.client.UserID && clientsGO.Count >= 3) OnStartGame(clientsGO, room);
     }
 
-    private async void SendMessageGo(List<KeyValuePair<Guid, IPlayer>> go, IPlayer client)
+    private async void SendMessageGo(List<UserClients> go, IPlayer client)
     {
         int i = 0;
         while (i < go.Count)
         {
             await Task.Delay(50);
-            go[i].Value.SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.StartGame, client.UserID.ToString())));
+            go[i]._player.SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.StartGame, client.UserID.ToString())));
             i++;
         }
         await Task.CompletedTask;
