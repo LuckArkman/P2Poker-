@@ -28,8 +28,10 @@ public class RoomController : BaseController
             var cls = ls.FindAll(x => x._player.socket.Connected);
             if (cls.Count > 0)
             {
-                SendUsersInRoom(cls, client, requestCode, actionCode, _room);
-                SendUserInJoinRoom(cls, client, requestCode, actionCode, _room);
+                var s = _room.clientList.FindAll(x => x._guid != client.UserID);
+                Console.WriteLine(s.Count);
+                SendUsersInRoom(s, client, requestCode, actionCode, _room);
+                SendUserInJoinRoom(s, client, requestCode, actionCode, _room);
             }
         }
         if (_room is null) NotJoin(client);

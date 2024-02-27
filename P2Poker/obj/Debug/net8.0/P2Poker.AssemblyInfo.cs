@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("P2Poker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6056e2ce14cde3d7a60c945b1e2f1a0a612a3e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d301f6a241278169c317b1c37c235dc329367b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("P2Poker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("P2Poker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
