@@ -14,21 +14,21 @@ public class GameController : BaseController
     public GameController()
         => requestCode = RequestCode.Game;
 
-    public void StartGame(List<IPlayer> clientsList, IPlayer client, Room? room)
+    public void StartGame(IPlayer client, Room? room)
     {
         if (clientsGO.GetValueOrDefault(client.UserID) is null)clientsGO.TryAdd(client.UserID, client);
-        var go = room!.clientList.FindAll(c => c.UserID != client.UserID);
+        var go = room!.clientList.ToList().FindAll(c => c.Key != client.UserID);
         SendMessageGo(go, client);
         if (client.UserID == room!.client.UserID && clientsGO.Count >= 3) OnStartGame(clientsGO, room);
     }
 
-    private async void SendMessageGo(List<IPlayer> go, IPlayer client)
+    private async void SendMessageGo(List<KeyValuePair<Guid, IPlayer>> go, IPlayer client)
     {
         int i = 0;
         while (i < go.Count)
         {
             await Task.Delay(50);
-            go[i].SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.StartGame, client.UserID.ToString())));
+            go[i].Value.SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.StartGame, client.UserID.ToString())));
             i++;
         }
         await Task.CompletedTask;
@@ -57,7 +57,7 @@ public class GameController : BaseController
     public void Game(ActionCode actionCode, IPlayer client, string data)
     {
         var room = client.roomController;
-        if (actionCode == ActionCode.StartGame) StartGame(room.clientList, client, room);
+        if (actionCode == ActionCode.StartGame) StartGame(client, room);
         if (actionCode == ActionCode.Bet) Bet(client, data);
         if (actionCode == ActionCode.Cobrir) Cobrir(client, data);
         if (actionCode == ActionCode.Pass) Pass(client, data);

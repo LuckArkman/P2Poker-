@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using System.Reflection.Metadata;
 using P2Poker.Bean;
 using P2Poker.Entitys;
 using P2Poker.Enums;
@@ -18,7 +20,7 @@ namespace P2Poker.Dao;
         public Guid UUID { get; set; }
         public int PlayerButton { get; set; }
         public int turn { get; set; }
-        public List<IPlayer> clientList = new List<IPlayer>();
+        public Dictionary<Guid,IPlayer> clientList = new ();
         public Dictionary<Guid,IPlayer> clientsGO = new Dictionary<Guid,IPlayer>();
         public List<string> clearList = new List<string>();
         public List<Card> cards = new List<Card>();
@@ -114,12 +116,14 @@ namespace P2Poker.Dao;
             => false;
 
         public void BroadCastMessage(IPlayer player, RequestCode requestCode, ActionCode actionCode, string message)
-            => clientList.ToList().ForEach(x=>
+        {
+            var xl = clientList.ToList().FindAll(x => x.Key != player.UserID);
+            xl.ForEach(x =>
             {
-                if (x.UserID != player.UserID) clientList.Find(u => u.UserID == x.UserID)!.SendData(Message.PackData(new Msg(requestCode, actionCode, message)));
+                x.Value.SendData(Message.PackData(new Msg(requestCode, actionCode, message)));
             });
-        public List<IPlayer> Clients()
-            => clientList;
+
+        }
 
         public void SendMessage(IPlayer player, RequestCode requestCode, ActionCode actionCode, string message)
             => player.SendData(Message.PackData(new Msg(requestCode, actionCode, message)));

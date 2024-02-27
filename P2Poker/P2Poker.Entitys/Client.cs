@@ -10,7 +10,6 @@ using P2PokerAPI.P2Poker.Core;
 
 namespace P2Poker.Entitys
 {
-
     public class Client : ClientDAO, IPlayer
     {
         public bool IsHouseOwner()

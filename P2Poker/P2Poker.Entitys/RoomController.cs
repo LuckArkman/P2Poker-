@@ -11,9 +11,7 @@ namespace P2Poker.Entitys;
 public class RoomController : BaseController
 {
     public RoomController()
-    {
-        requestCode = RequestCode.Room;
-    }
+    => requestCode = RequestCode.Room;
 
     public async void JoinRoom(RequestCode requestCode, ActionCode actionCode, IPlayer client, Room? room)
     {
@@ -22,11 +20,11 @@ public class RoomController : BaseController
         if (room.clientList.Count <= 5) _room = room;
         if (_room is not null)
         {
-            var ls = _room.clientList.FindAll(x => x.UserID != client.UserID);
-            var offCl = ls.FindAll(c => !c.socket.Connected);
-            if (offCl.Count > 0) offCl.ForEach(of => { _room.RemoveClient(of); });
+            var ls = _room.clientList.ToList().FindAll(x => x.Key != client.UserID);
+            var offCl = ls.FindAll(c => !c.Value.socket.Connected);
+            if (offCl.Count > 0) offCl.ToList().ForEach(of => { _room.RemoveClient(of.Value); });
             _room.JoinClient(client);
-            var cls = ls.ToList().FindAll(x => x.socket.Connected);
+            var cls = ls.ToList().FindAll(x => x.Value.socket.Connected);
             if (cls.Count > 0)
             {
                 SendUsersInRoom(cls, client, requestCode, actionCode, _room);
@@ -36,26 +34,24 @@ public class RoomController : BaseController
         if (_room is null) NotJoin(client);
     }
 
-    private async void SendUsersInRoom(List<IPlayer> cls, IPlayer client, RequestCode requestCode,
-        ActionCode actionCode, Room _room)
+    private async void SendUsersInRoom(List<KeyValuePair<Guid, IPlayer>> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
     {
         int i = 0;
         while (i < cls.Count)
         {
             await Task.Delay(50);
-            _room!.SendMessage(client, requestCode, actionCode, cls[i].UserID.ToString());
+            _room!.SendMessage(client, requestCode, actionCode, cls[i].Key.ToString());
             i++;
         }
     }
 
-    private async void SendUserInJoinRoom(List<IPlayer> cls, IPlayer client, RequestCode requestCode,
-        ActionCode actionCode, Room _room)
+    private async void SendUserInJoinRoom(List<KeyValuePair<Guid, IPlayer>> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
     {
         int i = 0;
         while (i < cls.Count)
         {
             await Task.Delay(50);
-            _room!.SendMessage(cls[i], requestCode, actionCode, client.UserID.ToString());
+            _room!.SendMessage(cls[i].Value, requestCode, actionCode, client.UserID.ToString());
             i++;
         }
     }
