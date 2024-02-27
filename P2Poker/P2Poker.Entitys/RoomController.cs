@@ -29,15 +29,14 @@ public class RoomController : BaseController
             if (cls.Count > 0)
             {
                 var s = _room.clientList.FindAll(x => x._guid != client.UserID);
-                Console.WriteLine(s.Count);
-                SendUsersInRoom(s, client, requestCode, actionCode, _room);
-                SendUserInJoinRoom(s, client, requestCode, actionCode, _room);
+                await SendUsersInRoom(s, client, requestCode, actionCode, _room);
+                await SendUserInJoinRoom(s, client, requestCode, actionCode, _room);
             }
         }
         if (_room is null) NotJoin(client);
     }
 
-    private async void SendUsersInRoom(List<UserClients> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
+    private async Task SendUsersInRoom(List<UserClients> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
     {
         int i = 0;
         while (i < cls.Count)
@@ -46,9 +45,10 @@ public class RoomController : BaseController
             _room!.SendMessage(client, requestCode, actionCode, cls[i]._guid.ToString());
             i++;
         }
+        await Task.CompletedTask;
     }
 
-    private async void SendUserInJoinRoom(List<UserClients> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
+    private async Task SendUserInJoinRoom(List<UserClients> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
     {
         int i = 0;
         while (i < cls.Count)
@@ -57,6 +57,7 @@ public class RoomController : BaseController
             _room!.SendMessage(cls[i]._player, requestCode, actionCode, client.UserID.ToString());
             i++;
         }
+        await Task.CompletedTask;
     }
 
     private void NotJoin(IPlayer client)
