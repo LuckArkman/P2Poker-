@@ -8,7 +8,6 @@ public class ConsoleWriter : IHostedService
     {
         while (!cancellationToken.IsCancellationRequested)
         {
-            
             Console.WriteLine($"{DateTime.Now.ToString()} Server Is Only");
             await Task.Delay(60000);
         }
