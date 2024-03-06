@@ -61,16 +61,31 @@ namespace P2Poker.Entitys
 
         public void OnStart()
         {
+            Thread SendMessage = new Thread(SendData);
+            SendMessage.IsBackground = true;
+            SendMessage.Start();
             receiveDone = new ManualResetEvent(false);
             controllerManager = new ControllerManager();
-            if (client == null || !client.Connected) return;
-            SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.UserId, UserID.ToString())));
-            client.BeginReceive(buffer, 0, 1024, SocketFlags.None, new AsyncCallback(ReceiveCallback), null);
+            if (client.Connected)
+            {
+                Thread ReceiveMessage = new Thread(PackMessage);
+                ReceiveMessage.IsBackground = true;
+                ReceiveMessage.Start();
+                
+            }
+
         }
+
 
         public void SendData(object? obj)
         {
             Send((byte[])obj!);
+        }
+
+        private void PackMessage()
+        {
+            SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.UserId, UserID.ToString())));
+            client.BeginReceive(buffer, 0, 1024, SocketFlags.None, new AsyncCallback(ReceiveCallback), null);
         }
 
         void HandleClient()
@@ -116,14 +131,14 @@ namespace P2Poker.Entitys
             }
         }
 
-        public Room? OnJoinRoom(IPlayer client, Guid guid)
+        public async Task<Room?> OnJoinRoom(IPlayer client, Guid guid)
         {
             var db = Singleton._singleton().CreateDBContext();
             var reposit = Singleton._singleton().CreateRoomRepository(db);
-            var rom = reposit.Get(guid);
+            Room? rom = await reposit.Get(guid, CancellationToken.None);
             NotFoundException.ThrowIfNull(rom, $"Room '{guid}' not found.");
             roomController = rom;
-            return rom!;
+            return rom;
         }
 
         public void Remove(IPlayer player)

@@ -29,6 +29,6 @@ public interface IPlayer
     bool IsHouseOwner();
     void Send(byte[] bytes);
     void SendData(object? obj);
-    Room? OnJoinRoom(IPlayer client, Guid guid);
+    Task<Room> OnJoinRoom(IPlayer client, Guid guid);
     void Remove(IPlayer player);
 }

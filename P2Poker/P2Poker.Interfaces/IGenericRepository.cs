@@ -4,11 +4,11 @@ namespace P2Poker.Interfaces;
 
 public interface IGenericRepository<TAggregate> : IRepository
 {
-    public Task Insert( TAggregate tAggregate);
-    public Room Get(Guid Id);
+    public Task Insert( TAggregate tAggregate, CancellationToken cancellationToken);
+    public Task<Room> Get(Guid Id, CancellationToken cancellationToken);
     
-    public Task Delete(Guid Id);
+    public Task Delete(Guid Id, CancellationToken cancellationToken);
     
-    public Task Update(Room _room);
+    public Task<Room?> Update(Room _room, CancellationToken cancellationToken);
     
 }

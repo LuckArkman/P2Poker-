@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using P2Poker.Bean;
 using P2Poker.Context;
 using P2Poker.Repository;
@@ -23,7 +24,11 @@ public class Singleton
     {
         if (_DbContext is null)
         {
-            _DbContext = new();
+            _DbContext = new P2pokerDbContext(
+                new DbContextOptionsBuilder<P2pokerDbContext>()
+                    .UseInMemoryDatabase($"integration-tests-db")
+                    .Options
+            );
             return _DbContext;
         }
         return _DbContext;
@@ -40,17 +45,30 @@ public class Singleton
         return _RoomRepository;
     }
 
-    public Room? RegisterRoom(Room output)
+    public async Task<Room?> RegisterRoom(Room output)
     {
         var db = _singleton().CreateDBContext();
         var repository = _singleton().CreateRoomRepository(db);
-        repository.Insert(output);
-        Room room = repository.Get(output.UUID);
-        return room;
+        await repository.Insert(output, CancellationToken.None);
+        Room? room = await repository.Get(output.UUID, CancellationToken.None);
+        if (room is not null)
+        {
+            return room;
+        }
+        else
+        {
+            return null;
+        }
+        
     }
 
-    public Room? GetRoom(Guid id)
-    => _singleton().CreateRoomRepository(_singleton().CreateDBContext()).Get(id);
+    public async Task<Room> GetRoom(Guid id)
+    {
+        var db = _singleton().CreateDBContext();
+        var repository = _singleton().CreateRoomRepository(db);
+        Room? room = await repository.Get(id, CancellationToken.None);
+        return room;
+    }
 
     public List<RoomManager> GetAllRoom()
     {

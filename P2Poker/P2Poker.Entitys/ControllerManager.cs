@@ -38,9 +38,9 @@ public class ControllerManager : IControllerManager
         BaseController controller;
         bool isGet = _controllerDict.TryGetValue(requestCode, out controller);
         NotFoundException.ThrowIfNull(isGet, $"isGet '{requestCode}' Can't found controller for.");
-        if (actionCode is ActionCode.CreateRoom) _room = new RoomController().CreateRoom(client);
+        if (actionCode is ActionCode.CreateRoom) _room = await new RoomController().CreateRoom(client);
         if (actionCode is ActionCode.ListRoom) _room = client.getRoom();
-        if (actionCode is ActionCode.JoinRoom) _room = client.OnJoinRoom(client, new Guid(data));
+        if (actionCode is ActionCode.JoinRoom) _room = await client.OnJoinRoom(client, new Guid(data));
         if (actionCode is ActionCode.StartGame) _gameController = client.roomController.GameController();
         if (actionCode is ActionCode.Bet) _gameController = client.roomController.GameController();
         if (actionCode is ActionCode.Cobrir) _gameController = client.roomController.GameController();

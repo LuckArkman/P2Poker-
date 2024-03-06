@@ -43,12 +43,16 @@ public class Server : ServerDAO, IServer
         }
     }
 
-    public void SendResponse(Guid RoomId,IPlayer client, ActionCode actionCode, string data)
+    public async void SendResponse(Guid RoomId,IPlayer client, ActionCode actionCode, string data)
     {
         var db = Singleton._singleton().CreateDBContext();
         var reposit = Singleton._singleton().CreateRoomRepository(db);
-        var rom = reposit.Get(RoomId);
-        var cl = rom.clientList.Find(x => x._guid == client.UserID);
+        var rom = await reposit.Get(RoomId, CancellationToken.None);
+        if(rom is not null)
+        {
+            UserClients? cl = null;
+            cl = rom.GetClients().Find(x => x._guid == client.UserID);
+        }
     }
 
     public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, IPlayer client)

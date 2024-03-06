@@ -89,4 +89,7 @@ public class Room : RoomControllerDAO
             }
         });
     }
+
+    public List<UserClients> GetClients()
+        => clientList;
 }

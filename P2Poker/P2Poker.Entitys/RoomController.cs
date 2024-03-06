@@ -64,14 +64,14 @@ public class RoomController : BaseController
     {
     }
 
-    public Room? CreateRoom(IPlayer client)
+    public async Task<Room> CreateRoom(IPlayer client)
     {
         var db = Singleton._singleton().CreateDBContext();
         var repository = Singleton._singleton().CreateRoomRepository(db);
         var output = new Room();
         output.OnStart();
-        repository.Insert(output);
-        Room room = repository.Get(output.UUID);
+        await repository.Insert(output, CancellationToken.None);
+        Room? room = await repository.Get(output.UUID, CancellationToken.None);
         NotFoundException.ThrowIfNull(room, $"isGet '{room}' Can't found controller for.");
         return room;
     }

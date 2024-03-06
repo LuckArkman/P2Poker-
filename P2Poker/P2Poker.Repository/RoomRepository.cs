@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using P2Poker.Bean;
 using P2Poker.Context;
 using P2Poker.Entitys;
@@ -13,9 +14,10 @@ public class RoomRepository : IP2PokerRepository
     public RoomRepository(P2pokerDbContext dbContext)
         => _catalogDb = dbContext;
 
-    public async Task Insert(Room room)
+    public async Task Insert(Room room, CancellationToken cancellationToken)
     {
-        _catalogDb._rooms.Add(room.UUID,room);
+        await _catalogDb._rooms.AddRangeAsync(room);
+        await _catalogDb.SaveChangesAsync(cancellationToken);
         await Task.CompletedTask;
     }
 
@@ -24,22 +26,22 @@ public class RoomRepository : IP2PokerRepository
         await Task.CompletedTask;
     }
 
-    public Room Get(Guid Id)
-        =>_catalogDb._rooms.GetValueOrDefault(Id)!;
+    public async Task<Room?> Get(Guid Id, CancellationToken cancellationToken)
+        =>await _catalogDb._rooms.FirstOrDefaultAsync(x => x.UUID == Id, cancellationToken)!;
 
-    public async Task Delete(Guid Id)
+    public async Task Delete(Guid Id, CancellationToken cancellationToken)
     {
-        _catalogDb._rooms.Remove(Id);
-        Room? room = _catalogDb._rooms.GetValueOrDefault(Id);
-        if (room is null) await Task.CompletedTask;
+        Room? room = await _catalogDb._rooms.FirstOrDefaultAsync(x => x.UUID == Id, cancellationToken);
+        if (room is not null) _catalogDb._rooms.Remove(room);
+        await Task.CompletedTask;
     }
 
-    public async Task Update(Room _room)
+    public async Task<Room?> Update(Room _room, CancellationToken cancellationToken)
     {
-        Room? room = _catalogDb._rooms.GetValueOrDefault(_room.UUID);
-        NotFoundException.ThrowIfNull(room, $"Room '{_room.UUID}' not found.");
+        Room? room = await _catalogDb._rooms.FirstOrDefaultAsync(x => x.UUID == _room.UUID, cancellationToken);
+        NotFoundException.ThrowIfNull(room, $"Room '{room.UUID}' not found.");
         room = _room;
-        await Task.CompletedTask;
+        return room;
     }
     public async Task<Room> Search(Guid input)
         => await Task.FromResult(new Room());
@@ -49,9 +51,8 @@ public class RoomRepository : IP2PokerRepository
         List<RoomManager> r = new List<RoomManager>();
         foreach (var _room in _catalogDb._rooms)
         {
-            r.Add(new RoomManager(_room.Value.tableContext, _room.Value.UUID, _room.Value.PlayerButton, _room.Value.turn));
+            r.Add(new RoomManager(_room.tableContext, _room.UUID, _room.PlayerButton, _room.turn));
         }
-
         return r;
     }
 }
