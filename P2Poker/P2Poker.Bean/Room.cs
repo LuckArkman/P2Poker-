@@ -56,7 +56,7 @@ public class Room : RoomControllerDAO
     public async void JoinClient(IPlayer player)
     {
         if (client is null) SetDealer(player);
-        clientList.Add(new UserClients(player.UserID,player));
+        clientList.Add(player);
         player.SendData(Message.PackData(new Msg(RequestCode.Room, ActionCode.UserPosition, (clientList.Count -1).ToString())));
         await Task.Delay(50);
         player.SendData(Message.PackData(new Msg(RequestCode.User, ActionCode.JoinRoom, player.UserID.ToString())));
@@ -64,8 +64,7 @@ public class Room : RoomControllerDAO
     }
     private async void SetDealer(IPlayer player)
     {
-        client = null;
-        while (client is null)
+        if (client is null)
         {
             client = player;
             await Task.Delay(2000);
@@ -76,11 +75,11 @@ public class Room : RoomControllerDAO
 
     public void RemoveClient(IPlayer o)
     {
-        var u = clientList.Find(c => c._guid == o.UserID);
+        var u = clientList.Find(c => c.UserID == o.UserID);
         Console.WriteLine(nameof(RemoveClient));
         clientList.ForEach(c =>
         {
-            if (c._guid == o.UserID)
+            if (c.UserID == o.UserID)
             {
                 lock (clientList)
                 {
@@ -90,6 +89,11 @@ public class Room : RoomControllerDAO
         });
     }
 
-    public List<UserClients> GetClients()
+    public List<IPlayer> GetClients()
         => clientList;
+
+    public void StartTableCards()
+    {
+        turn = 0;
+    }
 }

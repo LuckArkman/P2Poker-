@@ -11,6 +11,7 @@ namespace P2Poker.Dao
 {
     public class RoomControllerDAO : IBaseController, IRoomController
     {
+        public int _PlayerTurno = 1; 
         public GameController _gameController { get; set; }
         public Guid GetUUID() => UUID;
         public IStartTableContext tableContext { get; set; }
@@ -20,7 +21,7 @@ namespace P2Poker.Dao
         public Guid UUID { get; set; }
         public int PlayerButton { get; set; }
         public int turn { get; set; }
-        public List<UserClients> clientList = new();
+        public List<IPlayer> clientList = new();
         public Dictionary<Guid, IPlayer> clientsGO = new Dictionary<Guid, IPlayer>();
         public List<string> clearList = new List<string>();
         public List<Card> cards = new List<Card>();
@@ -129,8 +130,8 @@ namespace P2Poker.Dao
 
         public void BroadCastMessage(IPlayer player, RequestCode requestCode, ActionCode actionCode, string message)
         {
-            var xl = clientList.ToList().FindAll(x => x._guid != player.UserID);
-            xl.ForEach(x => { x._player.SendData(Message.PackData(new Msg(requestCode, actionCode, message))); });
+            var xl = clientList.ToList().FindAll(x => x.UserID != player.UserID);
+            xl.ForEach(x => { x.SendData(Message.PackData(new Msg(requestCode, actionCode, message))); });
 
         }
 

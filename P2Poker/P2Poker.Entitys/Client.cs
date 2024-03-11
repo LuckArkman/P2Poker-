@@ -140,7 +140,6 @@ namespace P2Poker.Entitys
             roomController = rom;
             return rom;
         }
-
         public void Remove(IPlayer player)
         {
             try
@@ -153,6 +152,11 @@ namespace P2Poker.Entitys
                 Console.WriteLine(e.Message);
             }
         }
+
+        public bool _openbet { get; set; }
+
+        public bool OpenBet()
+            => _openbet;
 
         private void OnProcessMessage(RequestCode requestCode, ActionCode actionCode, string data)
             => server.HandleRequest(requestCode, actionCode, data, this);

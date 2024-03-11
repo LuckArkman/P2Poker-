@@ -17,6 +17,7 @@ public enum ActionCode
     cardTable,
     CoinToken,
     UserId,
+    OpenBet,
     Bet,
     Check,
     Cobrir,

@@ -10,6 +10,8 @@ public abstract class BaseController
     
     protected RequestCode requestCode = RequestCode.None;
 
+    public Room? _room { get; set; }
+
     public RequestCode RequestCode
         =>requestCode;
 }

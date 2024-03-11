@@ -50,8 +50,7 @@ public class Server : ServerDAO, IServer
         var rom = await reposit.Get(RoomId, CancellationToken.None);
         if(rom is not null)
         {
-            UserClients? cl = null;
-            cl = rom.GetClients().Find(x => x._guid == client.UserID);
+            IPlayer? cl = rom.GetClients().Find(c => c.UserID == client.UserID);
         }
     }
 
@@ -61,8 +60,8 @@ public class Server : ServerDAO, IServer
     public void RemoveClient(IPlayer player, Room _room)
     {
         player.socket.Shutdown(SocketShutdown.Both);
-        var u = _room.clientList.Find(c => c._guid == player.UserID);
-        if (_room.clientList.Find( x => x._guid == player.UserID) is not null)
+        var u = _room.clientList.Find(c => c.UserID == player.UserID);
+        if (_room.clientList.Find( x => x.UserID == player.UserID) is not null)
         {
             lock (_room.clientList)
             {

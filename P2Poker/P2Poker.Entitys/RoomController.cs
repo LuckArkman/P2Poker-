@@ -21,14 +21,14 @@ public class RoomController : BaseController
         if (room.clientList.Count <= 5) _room = room;
         if (_room is not null)
         {
-            var ls = _room.clientList.FindAll(x => x._guid != client.UserID);
-            var offCl = ls.FindAll(c => !c._player.socket.Connected);
-            if (offCl.Count > 0) offCl.ForEach(of => { _room.RemoveClient(of._player); });
+            var ls = _room.clientList.FindAll(x => x.UserID != client.UserID);
+            var offCl = ls.FindAll(c => !c.socket.Connected);
+            if (offCl.Count > 0) offCl.ForEach(of => { _room.RemoveClient(of); });
             _room.JoinClient(client);
-            var cls = ls.FindAll(x => x._player.socket.Connected);
+            var cls = ls.FindAll(x => x.socket.Connected);
             if (cls.Count > 0)
             {
-                var s = _room.clientList.FindAll(x => x._guid != client.UserID);
+                var s = _room.clientList.FindAll(x => x.UserID != client.UserID);
                 await SendUsersInRoom(s, client, requestCode, actionCode, _room);
                 await SendUserInJoinRoom(s, client, requestCode, actionCode, _room);
             }
@@ -36,25 +36,25 @@ public class RoomController : BaseController
         if (_room is null) NotJoin(client);
     }
 
-    private async Task SendUsersInRoom(List<UserClients> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
+    private async Task SendUsersInRoom(List<IPlayer> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
     {
         int i = 0;
         while (i < cls.Count)
         {
             await Task.Delay(50);
-            _room!.SendMessage(client, requestCode, actionCode, cls[i]._guid.ToString());
+            _room!.SendMessage(client, requestCode, actionCode, cls[i].UserID.ToString());
             i++;
         }
         await Task.CompletedTask;
     }
 
-    private async Task SendUserInJoinRoom(List<UserClients> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
+    private async Task SendUserInJoinRoom(List<IPlayer> cls, IPlayer client, RequestCode requestCode, ActionCode actionCode, Room _room)
     {
         int i = 0;
         while (i < cls.Count)
         {
             await Task.Delay(50);
-            _room!.SendMessage(cls[i]._player, requestCode, actionCode, client.UserID.ToString());
+            _room!.SendMessage(cls[i], requestCode, actionCode, client.UserID.ToString());
             i++;
         }
         await Task.CompletedTask;

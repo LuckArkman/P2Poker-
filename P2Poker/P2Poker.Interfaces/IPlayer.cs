@@ -24,11 +24,12 @@ public interface IPlayer
     void EndRound(IEndRoundContext context);
     void EndHand(IEndHandContext context);
     void EndGame(IEndGameContext context);
-    
     void SendMessage(byte[] bytes);
     bool IsHouseOwner();
     void Send(byte[] bytes);
     void SendData(object? obj);
     Task<Room> OnJoinRoom(IPlayer client, Guid guid);
     void Remove(IPlayer player);
+    bool _openbet { get; set; }
+    bool OpenBet();
 }

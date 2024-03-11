@@ -1,6 +1,5 @@
 using Newtonsoft.Json;
 using P2Poker.Bean;
-using P2Poker.Dao;
 using P2Poker.Enums;
 using P2Poker.Interfaces;
 
@@ -9,7 +8,7 @@ namespace P2Poker.Entitys;
 public class GameController : BaseController
 {
     Dictionary<Guid, IPlayer> clientsGO = new Dictionary<Guid, IPlayer>();
-
+    
     List<Card> _cards = new List<Card>();
 
     public GameController()
@@ -17,19 +16,20 @@ public class GameController : BaseController
 
     public void StartGame(IPlayer client, Room? room)
     {
+        _room = room;
         if (clientsGO.GetValueOrDefault(client.UserID) is null)clientsGO.TryAdd(client.UserID, client);
-        var go = room!.clientList.ToList().FindAll(c => c._guid != client.UserID);
+        var go = room!.clientList.ToList().FindAll(c => c.UserID != client.UserID);
         SendMessageGo(go, client);
         if (client.UserID == room!.client.UserID && clientsGO.Count >= 3) OnStartGame(clientsGO, room);
     }
 
-    private async void SendMessageGo(List<UserClients> go, IPlayer client)
+    private async void SendMessageGo(List<IPlayer> go, IPlayer client)
     {
         int i = 0;
         while (i < go.Count)
         {
             await Task.Delay(50);
-            go[i]._player.SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.StartGame, client.UserID.ToString())));
+            go[i].SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.StartGame, client.UserID.ToString())));
             i++;
         }
         await Task.CompletedTask;
@@ -43,16 +43,24 @@ public class GameController : BaseController
         room.StartCards(clientsGo);
     }
 
-    public void Action(IPlayer client, string data)
-    {
-    }
+    public void Action(IPlayer client, string data){}
 
-    public void Cobrir(IPlayer client, string data)
-    {
-    }
+    public void Cobrir(IPlayer client, string data){}
 
-    public void Bet(IPlayer client, string data)
+    async void Bet(IPlayer client, string data)
     {
+        if(_room.turn < clientsGO.Count && clientsGO.FirstOrDefault(x => x.Value.OpenBet() == false).Value is not null) OpenBet(client, data);
+        if (_room.turn >= clientsGO.Count && clientsGO.FirstOrDefault(x => x.Value.OpenBet() == false).Value is null) _room.StartTableCards();
+        int i = 0;
+        var pl = _room.clientList.FindAll(x => x.UserID != client.UserID);
+        while (i < _room.clientList.Count)
+        {
+            await Task.Delay(50);
+            pl[i].SendData(Message.PackData(
+                new Msg(RequestCode.Game,
+                ActionCode.OpenBet,
+                JsonConvert.SerializeObject(string.Format("{0}|{1}", client.UserID, data)))));
+        }
     }
 
     public void Game(ActionCode actionCode, IPlayer client, string data)
@@ -65,13 +73,9 @@ public class GameController : BaseController
         if (actionCode == ActionCode.Check) Check(client, data);
     }
 
-    private void Check(IPlayer client, string data)
-    {
-    }
+    private void Check(IPlayer client, string data){}
 
-    private void Pass(IPlayer client, string data)
-    {
-    }
+    private void Pass(IPlayer client, string data){}
 
     public async void SendCards(List<Card> cards)
     {
@@ -89,6 +93,23 @@ public class GameController : BaseController
             players[i].SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.cardGame, JsonConvert.SerializeObject(players[i].handContext))));
             i++;
         }
+        await Task.Delay(50);
+        _room.client.SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.OpenBet, _room.client.UserID.ToString())));
         await Task.CompletedTask;
+    }
+    async void OpenBet(IPlayer client, string data)
+    {
+        Bet(client, data);
+        List<IPlayer> players = new();
+        await Task.Delay(50);
+        foreach (var p in clientsGO)
+        {
+            if (p.Key != _room.client.UserID) players.Add(p.Value);
+        }
+        if (_room.turn < players.Count)
+        {
+            players[_room.turn].SendData(Message.PackData(new Msg(RequestCode.Game, ActionCode.OpenBet, players[_room.turn].UserID.ToString())));
+            _room.turn++;
+        }
     }
 }
